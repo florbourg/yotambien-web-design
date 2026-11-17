@@ -1,114 +1,214 @@
 {
   "title": "Yo También! · Diseño web",
-  "latest": "v2.0.0",
-  "versions": [
+  "jiraBaseUrl": null,
+  "library": {
+    "latest": "ds-v1.0.0",
+    "versions": [
+      {
+        "id": "ds-v1.0.0",
+        "date": "2026-11-18",
+        "notes": "Línea base del Design System: fundamentos (DS · 01) y 29 componentes (DS · 02).",
+        "source": "designs/yotambien-web.pen",
+        "entry": "library/ds-v1.0.0/index.html",
+        "screens": [
+          {
+            "id": "ds-01-fundamentos",
+            "title": "DS · 01 Fundamentos",
+            "path": "library/ds-v1.0.0/ds-01-fundamentos.html"
+          },
+          {
+            "id": "ds-02-componentes",
+            "title": "DS · 02 Componentes",
+            "path": "library/ds-v1.0.0/ds-02-componentes.html"
+          }
+        ]
+      }
+    ]
+  },
+  "production": {
+    "latest": "prod-2026.11.18",
+    "releases": [
+      {
+        "id": "prod-2026.11.18",
+        "date": "2026-11-18",
+        "notes": "Línea base: pantallas publicadas hoy en el sitio productivo.",
+        "source": "designs/yotambien-web.pen",
+        "library": "ds-v1.0.0",
+        "entry": "production/prod-2026.11.18/index.html",
+        "screens": [
+          {
+            "id": "home",
+            "title": "Home",
+            "path": "production/prod-2026.11.18/home.html"
+          },
+          {
+            "id": "escuela",
+            "title": "Escuela",
+            "path": "production/prod-2026.11.18/escuela.html"
+          },
+          {
+            "id": "productora",
+            "title": "Productora",
+            "path": "production/prod-2026.11.18/productora.html"
+          },
+          {
+            "id": "formacion",
+            "title": "Formacion",
+            "path": "production/prod-2026.11.18/formacion.html"
+          },
+          {
+            "id": "nosotros",
+            "title": "Nosotros",
+            "path": "production/prod-2026.11.18/nosotros.html"
+          },
+          {
+            "id": "dona",
+            "title": "Dona",
+            "path": "production/prod-2026.11.18/dona.html"
+          }
+        ],
+        "tickets": []
+      }
+    ]
+  },
+  "work": [
     {
-      "version": "v2.0.0",
-      "date": "2026-11-17",
-      "notes": "DS · 01 Fundamentos: el encabezado pasa a «Sistema de diseño · v2.0» y el subtítulo a «Las bases visuales». El resto de las pantallas no cambia.",
-      "source": "designs/yotambien-web.pen",
-      "entry": "versions/v2.0.0/index.html",
-      "screens": [
+      "key": "TBD-1",
+      "title": "Portfolio",
+      "type": "feature",
+      "status": "en-diseno",
+      "created": "2026-11-18",
+      "updated": "2026-11-18",
+      "iterations": [
         {
-          "id": "home",
-          "title": "Home",
-          "path": "versions/v2.0.0/home.html"
-        },
-        {
-          "id": "escuela",
-          "title": "Escuela",
-          "path": "versions/v2.0.0/escuela.html"
-        },
-        {
-          "id": "productora",
-          "title": "Productora",
-          "path": "versions/v2.0.0/productora.html"
-        },
-        {
-          "id": "formacion",
-          "title": "Formacion",
-          "path": "versions/v2.0.0/formacion.html"
-        },
-        {
-          "id": "nosotros",
-          "title": "Nosotros",
-          "path": "versions/v2.0.0/nosotros.html"
-        },
-        {
-          "id": "dona",
-          "title": "Dona",
-          "path": "versions/v2.0.0/dona.html"
-        },
-        {
-          "id": "portfolio",
-          "title": "Portfolio",
-          "path": "versions/v2.0.0/portfolio.html"
-        },
-        {
-          "id": "ds-01-fundamentos",
-          "title": "DS · 01 Fundamentos",
-          "path": "versions/v2.0.0/ds-01-fundamentos.html"
-        },
-        {
-          "id": "ds-02-componentes",
-          "title": "DS · 02 Componentes",
-          "path": "versions/v2.0.0/ds-02-componentes.html"
-        }
-      ]
-    },
-    {
-      "version": "v1.0.0",
-      "date": "2026-11-17",
-      "notes": "Primera versión publicada: 7 páginas del sitio y el design system (fundamentos y componentes).",
-      "source": "designs/yotambien-web.pen",
-      "entry": "versions/v1.0.0/index.html",
-      "screens": [
-        {
-          "id": "home",
-          "title": "Home",
-          "path": "versions/v1.0.0/home.html"
-        },
-        {
-          "id": "escuela",
-          "title": "Escuela",
-          "path": "versions/v1.0.0/escuela.html"
-        },
-        {
-          "id": "productora",
-          "title": "Productora",
-          "path": "versions/v1.0.0/productora.html"
-        },
-        {
-          "id": "formacion",
-          "title": "Formacion",
-          "path": "versions/v1.0.0/formacion.html"
-        },
-        {
-          "id": "nosotros",
-          "title": "Nosotros",
-          "path": "versions/v1.0.0/nosotros.html"
-        },
-        {
-          "id": "dona",
-          "title": "Dona",
-          "path": "versions/v1.0.0/dona.html"
-        },
-        {
-          "id": "portfolio",
-          "title": "Portfolio",
-          "path": "versions/v1.0.0/portfolio.html"
-        },
-        {
-          "id": "ds-01-fundamentos",
-          "title": "DS · 01 Fundamentos",
-          "path": "versions/v1.0.0/ds-01-fundamentos.html"
-        },
-        {
-          "id": "ds-02-componentes",
-          "title": "DS · 02 Componentes",
-          "path": "versions/v1.0.0/ds-02-componentes.html"
+          "id": "r1",
+          "date": "2026-11-18",
+          "notes": "Estado actual del diseño de Portfolio (clave de Jira provisoria).",
+          "source": "designs/yotambien-web.pen",
+          "library": "ds-v1.0.0",
+          "entry": "work/TBD-1/r1/index.html",
+          "screens": [
+            {
+              "id": "portfolio",
+              "title": "Portfolio",
+              "path": "work/TBD-1/r1/portfolio.html"
+            }
+          ]
         }
       ]
     }
-  ]
+  ],
+  "legacy": {
+    "note": "Primer modelo (DS y pantallas juntos). Solo lectura.",
+    "versions": [
+      {
+        "id": "v2.0.0",
+        "date": "2026-11-17",
+        "notes": "DS · 01 Fundamentos: el encabezado pasa a «Sistema de diseño · v2.0» y el subtítulo a «Las bases visuales». El resto de las pantallas no cambia.",
+        "source": "designs/yotambien-web.pen",
+        "entry": "versions/v2.0.0/index.html",
+        "screens": [
+          {
+            "id": "home",
+            "title": "Home",
+            "path": "versions/v2.0.0/home.html"
+          },
+          {
+            "id": "escuela",
+            "title": "Escuela",
+            "path": "versions/v2.0.0/escuela.html"
+          },
+          {
+            "id": "productora",
+            "title": "Productora",
+            "path": "versions/v2.0.0/productora.html"
+          },
+          {
+            "id": "formacion",
+            "title": "Formacion",
+            "path": "versions/v2.0.0/formacion.html"
+          },
+          {
+            "id": "nosotros",
+            "title": "Nosotros",
+            "path": "versions/v2.0.0/nosotros.html"
+          },
+          {
+            "id": "dona",
+            "title": "Dona",
+            "path": "versions/v2.0.0/dona.html"
+          },
+          {
+            "id": "portfolio",
+            "title": "Portfolio",
+            "path": "versions/v2.0.0/portfolio.html"
+          },
+          {
+            "id": "ds-01-fundamentos",
+            "title": "DS · 01 Fundamentos",
+            "path": "versions/v2.0.0/ds-01-fundamentos.html"
+          },
+          {
+            "id": "ds-02-componentes",
+            "title": "DS · 02 Componentes",
+            "path": "versions/v2.0.0/ds-02-componentes.html"
+          }
+        ]
+      },
+      {
+        "id": "v1.0.0",
+        "date": "2026-11-17",
+        "notes": "Primera versión publicada: 7 páginas del sitio y el design system (fundamentos y componentes).",
+        "source": "designs/yotambien-web.pen",
+        "entry": "versions/v1.0.0/index.html",
+        "screens": [
+          {
+            "id": "home",
+            "title": "Home",
+            "path": "versions/v1.0.0/home.html"
+          },
+          {
+            "id": "escuela",
+            "title": "Escuela",
+            "path": "versions/v1.0.0/escuela.html"
+          },
+          {
+            "id": "productora",
+            "title": "Productora",
+            "path": "versions/v1.0.0/productora.html"
+          },
+          {
+            "id": "formacion",
+            "title": "Formacion",
+            "path": "versions/v1.0.0/formacion.html"
+          },
+          {
+            "id": "nosotros",
+            "title": "Nosotros",
+            "path": "versions/v1.0.0/nosotros.html"
+          },
+          {
+            "id": "dona",
+            "title": "Dona",
+            "path": "versions/v1.0.0/dona.html"
+          },
+          {
+            "id": "portfolio",
+            "title": "Portfolio",
+            "path": "versions/v1.0.0/portfolio.html"
+          },
+          {
+            "id": "ds-01-fundamentos",
+            "title": "DS · 01 Fundamentos",
+            "path": "versions/v1.0.0/ds-01-fundamentos.html"
+          },
+          {
+            "id": "ds-02-componentes",
+            "title": "DS · 02 Componentes",
+            "path": "versions/v1.0.0/ds-02-componentes.html"
+          }
+        ]
+      }
+    ]
+  }
 }

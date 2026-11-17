@@ -6,7 +6,7 @@
       "id": "FMyGV",
       "x": 0,
       "y": 0,
-      "name": "Pantallas",
+      "name": "Producción",
       "fill": "#EFEDE8",
       "cornerRadius": 48,
       "layout": "vertical",
@@ -25,7 +25,7 @@
               "id": "I1hgLB",
               "name": "Section Title",
               "fill": "#1A1A1A",
-              "content": "Pantallas",
+              "content": "Producción",
               "fontFamily": "Montserrat",
               "fontSize": 160,
               "fontWeight": "800"
@@ -35,7 +35,7 @@
               "id": "xhZAf",
               "name": "Section Subtitle",
               "fill": "#6B6B6B",
-              "content": "Páginas del sitio",
+              "content": "Pantallas publicadas hoy en el sitio productivo",
               "fontFamily": "Montserrat",
               "fontSize": 56,
               "fontWeight": "normal"
@@ -12160,944 +12160,6 @@
                   ]
                 }
               ]
-            },
-            {
-              "type": "frame",
-              "id": "a1MQt",
-              "name": "Portfolio",
-              "context": "body",
-              "clip": true,
-              "width": 2330,
-              "height": 3570,
-              "fill": "#ffffff",
-              "layout": "vertical",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "b0usN",
-                  "name": "div",
-                  "context": "div",
-                  "width": "fill_container",
-                  "fill": "#262627",
-                  "layout": "vertical",
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "id": "sBqJz",
-                      "type": "ref",
-                      "ref": "dslua",
-                      "name": "Header / solid / productora",
-                      "descendants": {
-                        "hZXHi": {
-                          "fill": "$white",
-                          "stroke": "$white"
-                        },
-                        "hZXHi/mGjkv": {
-                          "fill": "$ink"
-                        }
-                      }
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "j7JUqW",
-                  "name": "div",
-                  "context": "div",
-                  "width": "fill_container",
-                  "layout": "vertical",
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "aSJUc",
-                      "name": "div",
-                      "context": "div",
-                      "width": "fill_container",
-                      "fill": "#262627",
-                      "layout": "vertical",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "frame",
-                          "id": "K1Endn",
-                          "name": "div",
-                          "context": "div",
-                          "padding": [
-                            10,
-                            0
-                          ],
-                          "children": [
-                            {
-                              "type": "frame",
-                              "id": "pzwJJ",
-                              "name": "div",
-                              "context": "div",
-                              "layout": "vertical",
-                              "padding": [
-                                10,
-                                2
-                              ],
-                              "children": [
-                                {
-                                  "type": "frame",
-                                  "id": "v75rf",
-                                  "name": "ul",
-                                  "context": "ul",
-                                  "width": 1136,
-                                  "justifyContent": "center",
-                                  "children": [
-                                    {
-                                      "type": "frame",
-                                      "id": "eiTtZ",
-                                      "name": "span",
-                                      "context": "span",
-                                      "height": 23,
-                                      "layout": "vertical",
-                                      "children": [
-                                        {
-                                          "type": "text",
-                                          "id": "otO0E",
-                                          "name": "DESTACADAS, EVENTOS",
-                                          "context": "span",
-                                          "fill": "#ffffff",
-                                          "content": "DESTACADAS, EVENTOS",
-                                          "lineHeight": 1.53,
-                                          "textAlign": "center",
-                                          "fontFamily": "Montserrat",
-                                          "fontSize": 15,
-                                          "fontWeight": "normal"
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "tjAnN",
-                      "name": "div",
-                      "context": "div",
-                      "width": "fill_container",
-                      "fill": "#262627",
-                      "layout": "vertical",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "frame",
-                          "id": "h48a6",
-                          "name": "div",
-                          "context": "div",
-                          "width": 1140,
-                          "height": 406.66,
-                          "layout": "none",
-                          "children": [
-                            {
-                              "type": "frame",
-                              "id": "rMyBr",
-                              "x": 0,
-                              "y": 10,
-                              "name": "div",
-                              "context": "div",
-                              "layout": "vertical",
-                              "padding": 10,
-                              "children": [
-                                {
-                                  "type": "rectangle",
-                                  "id": "DkID2",
-                                  "name": "img",
-                                  "context": "img",
-                                  "fill": {
-                                    "type": "image",
-                                    "enabled": true,
-                                    "url": "yotambien-web-assets/c770482a00d0cd6f.webp",
-                                    "mode": "stretch"
-                                  },
-                                  "width": 550,
-                                  "height": 366.66
-                                }
-                              ]
-                            },
-                            {
-                              "type": "frame",
-                              "id": "d5k2DC",
-                              "x": 570,
-                              "y": 84.63,
-                              "name": "div",
-                              "context": "div",
-                              "width": 570,
-                              "height": 237.4,
-                              "layout": "vertical",
-                              "gap": 20,
-                              "padding": 10,
-                              "children": [
-                                {
-                                  "type": "text",
-                                  "id": "R9cDP",
-                                  "name": "WARNER",
-                                  "context": "h1",
-                                  "fill": "#ffffff",
-                                  "content": "WARNER",
-                                  "lineHeight": 1,
-                                  "fontFamily": "Montserrat",
-                                  "fontSize": 49,
-                                  "fontWeight": "700"
-                                },
-                                {
-                                  "type": "text",
-                                  "id": "g8VMNy",
-                                  "name": "Cobertura Audiovisual 2025",
-                                  "context": "h1",
-                                  "fill": "#ffffff",
-                                  "content": "Cobertura Audiovisual\n\n2025",
-                                  "lineHeight": 1.5,
-                                  "fontFamily": "Montserrat",
-                                  "fontSize": 16,
-                                  "fontWeight": "500"
-                                },
-                                {
-                                  "type": "frame",
-                                  "id": "OGcZA",
-                                  "name": "div",
-                                  "context": "div",
-                                  "width": "fill_container",
-                                  "height": 56.4,
-                                  "layout": "vertical",
-                                  "children": [
-                                    {
-                                      "type": "text",
-                                      "id": "W74FVv",
-                                      "name": "Video recap + Fotos de Fiesta de Fin de ",
-                                      "context": "p",
-                                      "fill": "#ffffff",
-                                      "textGrowth": "fixed-width-height",
-                                      "width": "fill_container",
-                                      "height": 42,
-                                      "content": "Video recap + Fotos de Fiesta de Fin de año de 700 personas en BNN Costanera",
-                                      "lineHeight": 1.31,
-                                      "fontFamily": "Montserrat",
-                                      "fontSize": 16,
-                                      "fontWeight": "300"
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "p6Z1Z",
-                      "name": "div",
-                      "context": "div",
-                      "width": "fill_container",
-                      "fill": "#262627",
-                      "layout": "vertical",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "frame",
-                          "id": "RxkjV",
-                          "name": "div",
-                          "context": "div",
-                          "width": 1440,
-                          "padding": [
-                            0,
-                            0,
-                            48,
-                            0
-                          ],
-                          "justifyContent": "center",
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "frame",
-                              "id": "zMqE2",
-                              "name": "div",
-                              "context": "div",
-                              "layout": "vertical",
-                              "padding": [
-                                32,
-                                0,
-                                0,
-                                0
-                              ],
-                              "children": [
-                                {
-                                  "id": "K8hRtD",
-                                  "type": "ref",
-                                  "ref": "lmwsR",
-                                  "name": "VideoEmbed",
-                                  "width": 979,
-                                  "height": 551,
-                                  "fill": [
-                                    "#000000",
-                                    {
-                                      "type": "image",
-                                      "enabled": true,
-                                      "url": "yotambien-web-assets/2be7e4bf64b19667.jpg",
-                                      "mode": "cover"
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "qFjF5",
-                      "name": "div",
-                      "context": "div",
-                      "width": "fill_container",
-                      "fill": "#262627",
-                      "layout": "vertical",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "frame",
-                          "id": "qBo7A",
-                          "name": "div",
-                          "context": "div",
-                          "width": 1274,
-                          "layout": "vertical",
-                          "padding": [
-                            65.7,
-                            0,
-                            0,
-                            0
-                          ],
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "frame",
-                              "id": "IZrYQ",
-                              "name": "div",
-                              "context": "div",
-                              "width": "fill_container",
-                              "height": 907.33,
-                              "layout": "vertical",
-                              "padding": [
-                                0,
-                                0,
-                                48,
-                                0
-                              ],
-                              "children": [
-                                {
-                                  "type": "frame",
-                                  "id": "mXbbH",
-                                  "name": "div",
-                                  "context": "div",
-                                  "width": "fill_container",
-                                  "height": 829.33,
-                                  "layout": "none",
-                                  "children": [
-                                    {
-                                      "type": "frame",
-                                      "id": "e5rDv",
-                                      "x": 0,
-                                      "y": 0,
-                                      "name": "a",
-                                      "context": "a",
-                                      "clip": true,
-                                      "layout": "vertical",
-                                      "children": [
-                                        {
-                                          "type": "rectangle",
-                                          "id": "UMb0L",
-                                          "name": "div",
-                                          "context": "div",
-                                          "fill": {
-                                            "type": "image",
-                                            "enabled": true,
-                                            "url": "yotambien-web-assets/aba34adbe11006c4.webp",
-                                            "mode": "cover"
-                                          },
-                                          "width": 311,
-                                          "height": 207.33
-                                        },
-                                        {
-                                          "type": "rectangle",
-                                          "id": "FjsOY",
-                                          "layoutPosition": "absolute",
-                                          "x": 0,
-                                          "y": 0,
-                                          "name": "div",
-                                          "context": "div",
-                                          "width": "fill_container(311)",
-                                          "height": 207.33
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "type": "frame",
-                                      "id": "wIGpE",
-                                      "x": 321,
-                                      "y": 0,
-                                      "name": "a",
-                                      "context": "a",
-                                      "clip": true,
-                                      "layout": "vertical",
-                                      "children": [
-                                        {
-                                          "type": "rectangle",
-                                          "id": "RE8XT",
-                                          "name": "div",
-                                          "context": "div",
-                                          "fill": {
-                                            "type": "image",
-                                            "enabled": true,
-                                            "url": "yotambien-web-assets/dc4bdd7b6bc6cc26.webp",
-                                            "mode": "cover"
-                                          },
-                                          "width": 311,
-                                          "height": 207.33
-                                        },
-                                        {
-                                          "type": "rectangle",
-                                          "id": "vdCdA",
-                                          "layoutPosition": "absolute",
-                                          "x": 0,
-                                          "y": 0,
-                                          "name": "div",
-                                          "context": "div",
-                                          "width": "fill_container(311)",
-                                          "height": 207.33
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "type": "frame",
-                                      "id": "s2uwA",
-                                      "x": 642,
-                                      "y": 0,
-                                      "name": "a",
-                                      "context": "a",
-                                      "clip": true,
-                                      "layout": "vertical",
-                                      "children": [
-                                        {
-                                          "type": "rectangle",
-                                          "id": "f4oGYs",
-                                          "name": "div",
-                                          "context": "div",
-                                          "fill": {
-                                            "type": "image",
-                                            "enabled": true,
-                                            "url": "yotambien-web-assets/aed9b6b1a5a17038.webp",
-                                            "mode": "cover"
-                                          },
-                                          "width": 311,
-                                          "height": 207.33
-                                        },
-                                        {
-                                          "type": "rectangle",
-                                          "id": "SDSql",
-                                          "layoutPosition": "absolute",
-                                          "x": 0,
-                                          "y": 0,
-                                          "name": "div",
-                                          "context": "div",
-                                          "width": "fill_container(311)",
-                                          "height": 207.33
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "type": "frame",
-                                      "id": "Uv4Kg",
-                                      "x": 963,
-                                      "y": 0,
-                                      "name": "a",
-                                      "context": "a",
-                                      "clip": true,
-                                      "layout": "vertical",
-                                      "children": [
-                                        {
-                                          "type": "rectangle",
-                                          "id": "te1ME",
-                                          "name": "div",
-                                          "context": "div",
-                                          "fill": {
-                                            "type": "image",
-                                            "enabled": true,
-                                            "url": "yotambien-web-assets/e85e5970ccc4d0b8.webp",
-                                            "mode": "cover"
-                                          },
-                                          "width": 311,
-                                          "height": 207.33
-                                        },
-                                        {
-                                          "type": "rectangle",
-                                          "id": "DRhCQ",
-                                          "layoutPosition": "absolute",
-                                          "x": 0,
-                                          "y": 0,
-                                          "name": "div",
-                                          "context": "div",
-                                          "width": "fill_container(311)",
-                                          "height": 207.33
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "type": "frame",
-                                      "id": "G6wkwR",
-                                      "x": 0,
-                                      "y": 217.33,
-                                      "name": "a",
-                                      "context": "a",
-                                      "clip": true,
-                                      "layout": "vertical",
-                                      "children": [
-                                        {
-                                          "type": "rectangle",
-                                          "id": "OXF6p",
-                                          "name": "div",
-                                          "context": "div",
-                                          "fill": {
-                                            "type": "image",
-                                            "enabled": true,
-                                            "url": "yotambien-web-assets/8368107abe25c98f.webp",
-                                            "mode": "cover"
-                                          },
-                                          "width": 311,
-                                          "height": 207.33
-                                        },
-                                        {
-                                          "type": "rectangle",
-                                          "id": "YCsm3",
-                                          "layoutPosition": "absolute",
-                                          "x": 0,
-                                          "y": 0,
-                                          "name": "div",
-                                          "context": "div",
-                                          "width": "fill_container(311)",
-                                          "height": 207.33
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "type": "frame",
-                                      "id": "W8weFe",
-                                      "x": 321,
-                                      "y": 217.33,
-                                      "name": "a",
-                                      "context": "a",
-                                      "clip": true,
-                                      "layout": "vertical",
-                                      "children": [
-                                        {
-                                          "type": "rectangle",
-                                          "id": "ux0qp",
-                                          "name": "div",
-                                          "context": "div",
-                                          "fill": {
-                                            "type": "image",
-                                            "enabled": true,
-                                            "url": "yotambien-web-assets/fac2117adcde9ddb.webp",
-                                            "mode": "cover"
-                                          },
-                                          "width": 311,
-                                          "height": 207.33
-                                        },
-                                        {
-                                          "type": "rectangle",
-                                          "id": "BgU6w",
-                                          "layoutPosition": "absolute",
-                                          "x": 0,
-                                          "y": 0,
-                                          "name": "div",
-                                          "context": "div",
-                                          "width": "fill_container(311)",
-                                          "height": 207.33
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "type": "frame",
-                                      "id": "g0XHUG",
-                                      "x": 642,
-                                      "y": 217.33,
-                                      "name": "a",
-                                      "context": "a",
-                                      "clip": true,
-                                      "layout": "vertical",
-                                      "children": [
-                                        {
-                                          "type": "rectangle",
-                                          "id": "SSqOf",
-                                          "name": "div",
-                                          "context": "div",
-                                          "fill": {
-                                            "type": "image",
-                                            "enabled": true,
-                                            "url": "yotambien-web-assets/a689a4e0e1f58ee5.webp",
-                                            "mode": "cover"
-                                          },
-                                          "width": 311,
-                                          "height": 207.33
-                                        },
-                                        {
-                                          "type": "rectangle",
-                                          "id": "i6GcI",
-                                          "layoutPosition": "absolute",
-                                          "x": 0,
-                                          "y": 0,
-                                          "name": "div",
-                                          "context": "div",
-                                          "width": "fill_container(311)",
-                                          "height": 207.33
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "type": "frame",
-                                      "id": "E9G7ue",
-                                      "x": 963,
-                                      "y": 217.33,
-                                      "name": "a",
-                                      "context": "a",
-                                      "clip": true,
-                                      "layout": "vertical",
-                                      "children": [
-                                        {
-                                          "type": "rectangle",
-                                          "id": "GSB9q",
-                                          "name": "div",
-                                          "context": "div",
-                                          "fill": {
-                                            "type": "image",
-                                            "enabled": true,
-                                            "url": "yotambien-web-assets/3f861c69ebbea0cb.webp",
-                                            "mode": "cover"
-                                          },
-                                          "width": 311,
-                                          "height": 207.33
-                                        },
-                                        {
-                                          "type": "rectangle",
-                                          "id": "L3Gu14",
-                                          "layoutPosition": "absolute",
-                                          "x": 0,
-                                          "y": 0,
-                                          "name": "div",
-                                          "context": "div",
-                                          "width": "fill_container(311)",
-                                          "height": 207.33
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "type": "frame",
-                                      "id": "cdIBr",
-                                      "x": 0,
-                                      "y": 434.67,
-                                      "name": "a",
-                                      "context": "a",
-                                      "clip": true,
-                                      "layout": "vertical",
-                                      "children": [
-                                        {
-                                          "type": "rectangle",
-                                          "id": "Pi7qG",
-                                          "name": "div",
-                                          "context": "div",
-                                          "fill": {
-                                            "type": "image",
-                                            "enabled": true,
-                                            "url": "yotambien-web-assets/00abbf41517d2a52.webp",
-                                            "mode": "cover"
-                                          },
-                                          "width": 311,
-                                          "height": 207.33
-                                        },
-                                        {
-                                          "type": "rectangle",
-                                          "id": "ICMoK",
-                                          "layoutPosition": "absolute",
-                                          "x": 0,
-                                          "y": 0,
-                                          "name": "div",
-                                          "context": "div",
-                                          "width": "fill_container(311)",
-                                          "height": 207.33
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "type": "frame",
-                                      "id": "eNd4r",
-                                      "x": 321,
-                                      "y": 434.67,
-                                      "name": "a",
-                                      "context": "a",
-                                      "clip": true,
-                                      "layout": "vertical",
-                                      "children": [
-                                        {
-                                          "type": "rectangle",
-                                          "id": "j5cNs",
-                                          "name": "div",
-                                          "context": "div",
-                                          "fill": {
-                                            "type": "image",
-                                            "enabled": true,
-                                            "url": "yotambien-web-assets/804f907ddbba553a.webp",
-                                            "mode": "cover"
-                                          },
-                                          "width": 311,
-                                          "height": 207.33
-                                        },
-                                        {
-                                          "type": "rectangle",
-                                          "id": "V6MOO",
-                                          "layoutPosition": "absolute",
-                                          "x": 0,
-                                          "y": 0,
-                                          "name": "div",
-                                          "context": "div",
-                                          "width": "fill_container(311)",
-                                          "height": 207.33
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "type": "frame",
-                                      "id": "Xw6QH",
-                                      "x": 642,
-                                      "y": 434.67,
-                                      "name": "a",
-                                      "context": "a",
-                                      "clip": true,
-                                      "layout": "vertical",
-                                      "children": [
-                                        {
-                                          "type": "rectangle",
-                                          "id": "qSHjd",
-                                          "name": "div",
-                                          "context": "div",
-                                          "fill": {
-                                            "type": "image",
-                                            "enabled": true,
-                                            "url": "yotambien-web-assets/aae518568280baa9.webp",
-                                            "mode": "cover"
-                                          },
-                                          "width": 311,
-                                          "height": 207.33
-                                        },
-                                        {
-                                          "type": "rectangle",
-                                          "id": "VmSuG",
-                                          "layoutPosition": "absolute",
-                                          "x": 0,
-                                          "y": 0,
-                                          "name": "div",
-                                          "context": "div",
-                                          "width": "fill_container(311)",
-                                          "height": 207.33
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "type": "frame",
-                                      "id": "cU9Cn",
-                                      "x": 963,
-                                      "y": 434.67,
-                                      "name": "a",
-                                      "context": "a",
-                                      "clip": true,
-                                      "layout": "vertical",
-                                      "children": [
-                                        {
-                                          "type": "rectangle",
-                                          "id": "IvBrO",
-                                          "name": "div",
-                                          "context": "div",
-                                          "fill": {
-                                            "type": "image",
-                                            "enabled": true,
-                                            "url": "yotambien-web-assets/3a9e318ac68c69d3.webp",
-                                            "mode": "cover"
-                                          },
-                                          "width": 311,
-                                          "height": 207.33
-                                        },
-                                        {
-                                          "type": "rectangle",
-                                          "id": "ZBGfF",
-                                          "layoutPosition": "absolute",
-                                          "x": 0,
-                                          "y": 0,
-                                          "name": "div",
-                                          "context": "div",
-                                          "width": "fill_container(311)",
-                                          "height": 207.33
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "type": "frame",
-                                      "id": "e1drcV",
-                                      "x": 0,
-                                      "y": 652,
-                                      "name": "a",
-                                      "context": "a",
-                                      "clip": true,
-                                      "layout": "vertical",
-                                      "children": [
-                                        {
-                                          "type": "rectangle",
-                                          "id": "L0ZAmh",
-                                          "name": "div",
-                                          "context": "div",
-                                          "fill": {
-                                            "type": "image",
-                                            "enabled": true,
-                                            "url": "yotambien-web-assets/f8ee6a447dddfeeb.webp",
-                                            "mode": "cover"
-                                          },
-                                          "width": 311,
-                                          "height": 207.33
-                                        },
-                                        {
-                                          "type": "rectangle",
-                                          "id": "KFpXE",
-                                          "layoutPosition": "absolute",
-                                          "x": 0,
-                                          "y": 0,
-                                          "name": "div",
-                                          "context": "div",
-                                          "width": "fill_container(311)",
-                                          "height": 207.33
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "nFFgN",
-                      "name": "div",
-                      "context": "div",
-                      "width": "fill_container",
-                      "fill": "#262627",
-                      "layout": "vertical",
-                      "padding": [
-                        112,
-                        0,
-                        80,
-                        0
-                      ],
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "id": "VHcif",
-                          "type": "ref",
-                          "ref": "gVnNW",
-                          "name": "ContactForm / mint (ProjectContactForm)",
-                          "width": 1000
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "kQjDp",
-                  "name": "footer",
-                  "context": "footer",
-                  "width": "fill_container",
-                  "layout": "vertical",
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "Dvgt2",
-                      "name": "div",
-                      "context": "div",
-                      "width": "fill_container",
-                      "fill": "#262627",
-                      "layout": "vertical",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "id": "omwIk",
-                          "type": "ref",
-                          "ref": "tsiF9",
-                          "name": "Footer / dark",
-                          "fill": [],
-                          "descendants": {
-                            "S4hjkG": {
-                              "enabled": false
-                            }
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "pRGwt",
-                      "name": "div",
-                      "context": "div",
-                      "width": "fill_container",
-                      "fill": "#4c4c4d",
-                      "layout": "vertical",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "id": "E8IT1",
-                          "type": "ref",
-                          "ref": "VlaOu",
-                          "name": "LegalBar",
-                          "width": 1140,
-                          "fill": [],
-                          "padding": [
-                            9,
-                            0
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "P8TRii",
-                  "layoutPosition": "absolute",
-                  "x": 0,
-                  "y": 0,
-                  "name": "div",
-                  "context": "div",
-                  "width": "fill_container(2330)",
-                  "height": 3570,
-                  "layout": "none",
-                  "children": [
-                    {
-                      "id": "svtM4",
-                      "type": "ref",
-                      "ref": "ljLQk",
-                      "name": "FloatingActions",
-                      "x": 2237,
-                      "y": 1994
-                    }
-                  ]
-                }
-              ]
             }
           ]
         }
@@ -13107,7 +12169,7 @@
       "type": "frame",
       "id": "K236f",
       "x": 0,
-      "y": 8517,
+      "y": 14355,
       "name": "Design System",
       "fill": "#EFEDE8",
       "cornerRadius": 48,
@@ -27699,6 +26761,1025 @@
                                   }
                                 }
                               ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "xIPFQ",
+      "x": 0,
+      "y": 8517,
+      "name": "En progreso",
+      "fill": "#E8EEF2",
+      "cornerRadius": 48,
+      "layout": "vertical",
+      "gap": 96,
+      "padding": 160,
+      "children": [
+        {
+          "type": "frame",
+          "id": "i0ODnF",
+          "name": "Section Header",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "EeQxF",
+              "name": "Section Title",
+              "fill": "#1A1A1A",
+              "content": "En progreso",
+              "fontFamily": "Montserrat",
+              "fontSize": 160,
+              "fontWeight": "800"
+            },
+            {
+              "type": "text",
+              "id": "DBy6r",
+              "name": "Section Subtitle",
+              "fill": "#6B6B6B",
+              "content": "Un contenedor por ticket de Jira: CLAVE-123 · Título",
+              "fontFamily": "Montserrat",
+              "fontSize": 56,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Q6rAv",
+          "name": "Frames",
+          "gap": 200,
+          "children": [
+            {
+              "type": "frame",
+              "id": "kLAU0",
+              "name": "TBD-1 · Portfolio",
+              "fill": "#FFFFFF",
+              "cornerRadius": 32,
+              "layout": "vertical",
+              "gap": 64,
+              "padding": 96,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "MA1iN",
+                  "name": "Ticket Label",
+                  "fill": "#1A1A1A",
+                  "content": "TBD-1 · Portfolio",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 96,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "J8MH9",
+                  "name": "Pantallas",
+                  "gap": 160,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "a1MQt",
+                      "name": "Portfolio",
+                      "context": "body",
+                      "clip": true,
+                      "width": 2330,
+                      "height": 3570,
+                      "fill": "#ffffff",
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "b0usN",
+                          "name": "div",
+                          "context": "div",
+                          "width": "fill_container",
+                          "fill": "#262627",
+                          "layout": "vertical",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "id": "sBqJz",
+                              "type": "ref",
+                              "ref": "dslua",
+                              "name": "Header / solid / productora",
+                              "descendants": {
+                                "hZXHi": {
+                                  "fill": "$white",
+                                  "stroke": "$white"
+                                },
+                                "hZXHi/mGjkv": {
+                                  "fill": "$ink"
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "j7JUqW",
+                          "name": "div",
+                          "context": "div",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "aSJUc",
+                              "name": "div",
+                              "context": "div",
+                              "width": "fill_container",
+                              "fill": "#262627",
+                              "layout": "vertical",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "K1Endn",
+                                  "name": "div",
+                                  "context": "div",
+                                  "padding": [
+                                    10,
+                                    0
+                                  ],
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "pzwJJ",
+                                      "name": "div",
+                                      "context": "div",
+                                      "layout": "vertical",
+                                      "padding": [
+                                        10,
+                                        2
+                                      ],
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "v75rf",
+                                          "name": "ul",
+                                          "context": "ul",
+                                          "width": 1136,
+                                          "justifyContent": "center",
+                                          "children": [
+                                            {
+                                              "type": "frame",
+                                              "id": "eiTtZ",
+                                              "name": "span",
+                                              "context": "span",
+                                              "height": 23,
+                                              "layout": "vertical",
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "otO0E",
+                                                  "name": "DESTACADAS, EVENTOS",
+                                                  "context": "span",
+                                                  "fill": "#ffffff",
+                                                  "content": "DESTACADAS, EVENTOS",
+                                                  "lineHeight": 1.53,
+                                                  "textAlign": "center",
+                                                  "fontFamily": "Montserrat",
+                                                  "fontSize": 15,
+                                                  "fontWeight": "normal"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "tjAnN",
+                              "name": "div",
+                              "context": "div",
+                              "width": "fill_container",
+                              "fill": "#262627",
+                              "layout": "vertical",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "h48a6",
+                                  "name": "div",
+                                  "context": "div",
+                                  "width": 1140,
+                                  "height": 406.66,
+                                  "layout": "none",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "rMyBr",
+                                      "x": 0,
+                                      "y": 10,
+                                      "name": "div",
+                                      "context": "div",
+                                      "layout": "vertical",
+                                      "padding": 10,
+                                      "children": [
+                                        {
+                                          "type": "rectangle",
+                                          "id": "DkID2",
+                                          "name": "img",
+                                          "context": "img",
+                                          "fill": {
+                                            "type": "image",
+                                            "enabled": true,
+                                            "url": "yotambien-web-assets/c770482a00d0cd6f.webp",
+                                            "mode": "stretch"
+                                          },
+                                          "width": 550,
+                                          "height": 366.66
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "d5k2DC",
+                                      "x": 570,
+                                      "y": 84.63,
+                                      "name": "div",
+                                      "context": "div",
+                                      "width": 570,
+                                      "height": 237.4,
+                                      "layout": "vertical",
+                                      "gap": 20,
+                                      "padding": 10,
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "R9cDP",
+                                          "name": "WARNER",
+                                          "context": "h1",
+                                          "fill": "#ffffff",
+                                          "content": "WARNER",
+                                          "lineHeight": 1,
+                                          "fontFamily": "Montserrat",
+                                          "fontSize": 49,
+                                          "fontWeight": "700"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "g8VMNy",
+                                          "name": "Cobertura Audiovisual 2025",
+                                          "context": "h1",
+                                          "fill": "#ffffff",
+                                          "content": "Cobertura Audiovisual\n\n2025",
+                                          "lineHeight": 1.5,
+                                          "fontFamily": "Montserrat",
+                                          "fontSize": 16,
+                                          "fontWeight": "500"
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "OGcZA",
+                                          "name": "div",
+                                          "context": "div",
+                                          "width": "fill_container",
+                                          "height": 56.4,
+                                          "layout": "vertical",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "W74FVv",
+                                              "name": "Video recap + Fotos de Fiesta de Fin de ",
+                                              "context": "p",
+                                              "fill": "#ffffff",
+                                              "textGrowth": "fixed-width-height",
+                                              "width": "fill_container",
+                                              "height": 42,
+                                              "content": "Video recap + Fotos de Fiesta de Fin de año de 700 personas en BNN Costanera",
+                                              "lineHeight": 1.31,
+                                              "fontFamily": "Montserrat",
+                                              "fontSize": 16,
+                                              "fontWeight": "300"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "p6Z1Z",
+                              "name": "div",
+                              "context": "div",
+                              "width": "fill_container",
+                              "fill": "#262627",
+                              "layout": "vertical",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "RxkjV",
+                                  "name": "div",
+                                  "context": "div",
+                                  "width": 1440,
+                                  "padding": [
+                                    0,
+                                    0,
+                                    48,
+                                    0
+                                  ],
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "zMqE2",
+                                      "name": "div",
+                                      "context": "div",
+                                      "layout": "vertical",
+                                      "padding": [
+                                        32,
+                                        0,
+                                        0,
+                                        0
+                                      ],
+                                      "children": [
+                                        {
+                                          "id": "K8hRtD",
+                                          "type": "ref",
+                                          "ref": "lmwsR",
+                                          "name": "VideoEmbed",
+                                          "width": 979,
+                                          "height": 551,
+                                          "fill": [
+                                            "#000000",
+                                            {
+                                              "type": "image",
+                                              "enabled": true,
+                                              "url": "yotambien-web-assets/2be7e4bf64b19667.jpg",
+                                              "mode": "cover"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "qFjF5",
+                              "name": "div",
+                              "context": "div",
+                              "width": "fill_container",
+                              "fill": "#262627",
+                              "layout": "vertical",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "qBo7A",
+                                  "name": "div",
+                                  "context": "div",
+                                  "width": 1274,
+                                  "layout": "vertical",
+                                  "padding": [
+                                    65.7,
+                                    0,
+                                    0,
+                                    0
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "IZrYQ",
+                                      "name": "div",
+                                      "context": "div",
+                                      "width": "fill_container",
+                                      "height": 907.33,
+                                      "layout": "vertical",
+                                      "padding": [
+                                        0,
+                                        0,
+                                        48,
+                                        0
+                                      ],
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "mXbbH",
+                                          "name": "div",
+                                          "context": "div",
+                                          "width": "fill_container",
+                                          "height": 829.33,
+                                          "layout": "none",
+                                          "children": [
+                                            {
+                                              "type": "frame",
+                                              "id": "e5rDv",
+                                              "x": 0,
+                                              "y": 0,
+                                              "name": "a",
+                                              "context": "a",
+                                              "clip": true,
+                                              "layout": "vertical",
+                                              "children": [
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "UMb0L",
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "fill": {
+                                                    "type": "image",
+                                                    "enabled": true,
+                                                    "url": "yotambien-web-assets/aba34adbe11006c4.webp",
+                                                    "mode": "cover"
+                                                  },
+                                                  "width": 311,
+                                                  "height": 207.33
+                                                },
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "FjsOY",
+                                                  "layoutPosition": "absolute",
+                                                  "x": 0,
+                                                  "y": 0,
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "width": "fill_container(311)",
+                                                  "height": 207.33
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "wIGpE",
+                                              "x": 321,
+                                              "y": 0,
+                                              "name": "a",
+                                              "context": "a",
+                                              "clip": true,
+                                              "layout": "vertical",
+                                              "children": [
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "RE8XT",
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "fill": {
+                                                    "type": "image",
+                                                    "enabled": true,
+                                                    "url": "yotambien-web-assets/dc4bdd7b6bc6cc26.webp",
+                                                    "mode": "cover"
+                                                  },
+                                                  "width": 311,
+                                                  "height": 207.33
+                                                },
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "vdCdA",
+                                                  "layoutPosition": "absolute",
+                                                  "x": 0,
+                                                  "y": 0,
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "width": "fill_container(311)",
+                                                  "height": 207.33
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "s2uwA",
+                                              "x": 642,
+                                              "y": 0,
+                                              "name": "a",
+                                              "context": "a",
+                                              "clip": true,
+                                              "layout": "vertical",
+                                              "children": [
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "f4oGYs",
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "fill": {
+                                                    "type": "image",
+                                                    "enabled": true,
+                                                    "url": "yotambien-web-assets/aed9b6b1a5a17038.webp",
+                                                    "mode": "cover"
+                                                  },
+                                                  "width": 311,
+                                                  "height": 207.33
+                                                },
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "SDSql",
+                                                  "layoutPosition": "absolute",
+                                                  "x": 0,
+                                                  "y": 0,
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "width": "fill_container(311)",
+                                                  "height": 207.33
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "Uv4Kg",
+                                              "x": 963,
+                                              "y": 0,
+                                              "name": "a",
+                                              "context": "a",
+                                              "clip": true,
+                                              "layout": "vertical",
+                                              "children": [
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "te1ME",
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "fill": {
+                                                    "type": "image",
+                                                    "enabled": true,
+                                                    "url": "yotambien-web-assets/e85e5970ccc4d0b8.webp",
+                                                    "mode": "cover"
+                                                  },
+                                                  "width": 311,
+                                                  "height": 207.33
+                                                },
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "DRhCQ",
+                                                  "layoutPosition": "absolute",
+                                                  "x": 0,
+                                                  "y": 0,
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "width": "fill_container(311)",
+                                                  "height": 207.33
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "G6wkwR",
+                                              "x": 0,
+                                              "y": 217.33,
+                                              "name": "a",
+                                              "context": "a",
+                                              "clip": true,
+                                              "layout": "vertical",
+                                              "children": [
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "OXF6p",
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "fill": {
+                                                    "type": "image",
+                                                    "enabled": true,
+                                                    "url": "yotambien-web-assets/8368107abe25c98f.webp",
+                                                    "mode": "cover"
+                                                  },
+                                                  "width": 311,
+                                                  "height": 207.33
+                                                },
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "YCsm3",
+                                                  "layoutPosition": "absolute",
+                                                  "x": 0,
+                                                  "y": 0,
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "width": "fill_container(311)",
+                                                  "height": 207.33
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "W8weFe",
+                                              "x": 321,
+                                              "y": 217.33,
+                                              "name": "a",
+                                              "context": "a",
+                                              "clip": true,
+                                              "layout": "vertical",
+                                              "children": [
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "ux0qp",
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "fill": {
+                                                    "type": "image",
+                                                    "enabled": true,
+                                                    "url": "yotambien-web-assets/fac2117adcde9ddb.webp",
+                                                    "mode": "cover"
+                                                  },
+                                                  "width": 311,
+                                                  "height": 207.33
+                                                },
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "BgU6w",
+                                                  "layoutPosition": "absolute",
+                                                  "x": 0,
+                                                  "y": 0,
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "width": "fill_container(311)",
+                                                  "height": 207.33
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "g0XHUG",
+                                              "x": 642,
+                                              "y": 217.33,
+                                              "name": "a",
+                                              "context": "a",
+                                              "clip": true,
+                                              "layout": "vertical",
+                                              "children": [
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "SSqOf",
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "fill": {
+                                                    "type": "image",
+                                                    "enabled": true,
+                                                    "url": "yotambien-web-assets/a689a4e0e1f58ee5.webp",
+                                                    "mode": "cover"
+                                                  },
+                                                  "width": 311,
+                                                  "height": 207.33
+                                                },
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "i6GcI",
+                                                  "layoutPosition": "absolute",
+                                                  "x": 0,
+                                                  "y": 0,
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "width": "fill_container(311)",
+                                                  "height": 207.33
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "E9G7ue",
+                                              "x": 963,
+                                              "y": 217.33,
+                                              "name": "a",
+                                              "context": "a",
+                                              "clip": true,
+                                              "layout": "vertical",
+                                              "children": [
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "GSB9q",
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "fill": {
+                                                    "type": "image",
+                                                    "enabled": true,
+                                                    "url": "yotambien-web-assets/3f861c69ebbea0cb.webp",
+                                                    "mode": "cover"
+                                                  },
+                                                  "width": 311,
+                                                  "height": 207.33
+                                                },
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "L3Gu14",
+                                                  "layoutPosition": "absolute",
+                                                  "x": 0,
+                                                  "y": 0,
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "width": "fill_container(311)",
+                                                  "height": 207.33
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "cdIBr",
+                                              "x": 0,
+                                              "y": 434.67,
+                                              "name": "a",
+                                              "context": "a",
+                                              "clip": true,
+                                              "layout": "vertical",
+                                              "children": [
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "Pi7qG",
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "fill": {
+                                                    "type": "image",
+                                                    "enabled": true,
+                                                    "url": "yotambien-web-assets/00abbf41517d2a52.webp",
+                                                    "mode": "cover"
+                                                  },
+                                                  "width": 311,
+                                                  "height": 207.33
+                                                },
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "ICMoK",
+                                                  "layoutPosition": "absolute",
+                                                  "x": 0,
+                                                  "y": 0,
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "width": "fill_container(311)",
+                                                  "height": 207.33
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "eNd4r",
+                                              "x": 321,
+                                              "y": 434.67,
+                                              "name": "a",
+                                              "context": "a",
+                                              "clip": true,
+                                              "layout": "vertical",
+                                              "children": [
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "j5cNs",
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "fill": {
+                                                    "type": "image",
+                                                    "enabled": true,
+                                                    "url": "yotambien-web-assets/804f907ddbba553a.webp",
+                                                    "mode": "cover"
+                                                  },
+                                                  "width": 311,
+                                                  "height": 207.33
+                                                },
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "V6MOO",
+                                                  "layoutPosition": "absolute",
+                                                  "x": 0,
+                                                  "y": 0,
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "width": "fill_container(311)",
+                                                  "height": 207.33
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "Xw6QH",
+                                              "x": 642,
+                                              "y": 434.67,
+                                              "name": "a",
+                                              "context": "a",
+                                              "clip": true,
+                                              "layout": "vertical",
+                                              "children": [
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "qSHjd",
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "fill": {
+                                                    "type": "image",
+                                                    "enabled": true,
+                                                    "url": "yotambien-web-assets/aae518568280baa9.webp",
+                                                    "mode": "cover"
+                                                  },
+                                                  "width": 311,
+                                                  "height": 207.33
+                                                },
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "VmSuG",
+                                                  "layoutPosition": "absolute",
+                                                  "x": 0,
+                                                  "y": 0,
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "width": "fill_container(311)",
+                                                  "height": 207.33
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "cU9Cn",
+                                              "x": 963,
+                                              "y": 434.67,
+                                              "name": "a",
+                                              "context": "a",
+                                              "clip": true,
+                                              "layout": "vertical",
+                                              "children": [
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "IvBrO",
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "fill": {
+                                                    "type": "image",
+                                                    "enabled": true,
+                                                    "url": "yotambien-web-assets/3a9e318ac68c69d3.webp",
+                                                    "mode": "cover"
+                                                  },
+                                                  "width": 311,
+                                                  "height": 207.33
+                                                },
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "ZBGfF",
+                                                  "layoutPosition": "absolute",
+                                                  "x": 0,
+                                                  "y": 0,
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "width": "fill_container(311)",
+                                                  "height": 207.33
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "e1drcV",
+                                              "x": 0,
+                                              "y": 652,
+                                              "name": "a",
+                                              "context": "a",
+                                              "clip": true,
+                                              "layout": "vertical",
+                                              "children": [
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "L0ZAmh",
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "fill": {
+                                                    "type": "image",
+                                                    "enabled": true,
+                                                    "url": "yotambien-web-assets/f8ee6a447dddfeeb.webp",
+                                                    "mode": "cover"
+                                                  },
+                                                  "width": 311,
+                                                  "height": 207.33
+                                                },
+                                                {
+                                                  "type": "rectangle",
+                                                  "id": "KFpXE",
+                                                  "layoutPosition": "absolute",
+                                                  "x": 0,
+                                                  "y": 0,
+                                                  "name": "div",
+                                                  "context": "div",
+                                                  "width": "fill_container(311)",
+                                                  "height": 207.33
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "nFFgN",
+                              "name": "div",
+                              "context": "div",
+                              "width": "fill_container",
+                              "fill": "#262627",
+                              "layout": "vertical",
+                              "padding": [
+                                112,
+                                0,
+                                80,
+                                0
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "id": "VHcif",
+                                  "type": "ref",
+                                  "ref": "gVnNW",
+                                  "name": "ContactForm / mint (ProjectContactForm)",
+                                  "width": 1000
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "kQjDp",
+                          "name": "footer",
+                          "context": "footer",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "Dvgt2",
+                              "name": "div",
+                              "context": "div",
+                              "width": "fill_container",
+                              "fill": "#262627",
+                              "layout": "vertical",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "id": "omwIk",
+                                  "type": "ref",
+                                  "ref": "tsiF9",
+                                  "name": "Footer / dark",
+                                  "fill": [],
+                                  "descendants": {
+                                    "S4hjkG": {
+                                      "enabled": false
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "pRGwt",
+                              "name": "div",
+                              "context": "div",
+                              "width": "fill_container",
+                              "fill": "#4c4c4d",
+                              "layout": "vertical",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "id": "E8IT1",
+                                  "type": "ref",
+                                  "ref": "VlaOu",
+                                  "name": "LegalBar",
+                                  "width": 1140,
+                                  "fill": [],
+                                  "padding": [
+                                    9,
+                                    0
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "P8TRii",
+                          "layoutPosition": "absolute",
+                          "x": 0,
+                          "y": 0,
+                          "name": "div",
+                          "context": "div",
+                          "width": "fill_container(2330)",
+                          "height": 3570,
+                          "layout": "none",
+                          "children": [
+                            {
+                              "id": "svtM4",
+                              "type": "ref",
+                              "ref": "ljLQk",
+                              "name": "FloatingActions",
+                              "x": 2237,
+                              "y": 1994
                             }
                           ]
                         }
