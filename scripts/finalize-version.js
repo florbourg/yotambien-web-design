@@ -4,13 +4,14 @@
 //   node scripts/finalize-version.js v1.1.0 --notes "Nueva sección de testimonios" [--order home,escuela,...]
 //
 // This does NOT export anything. It:
-//   1. Copies every image the exported HTML references from designs/ into the version folder,
-//      keeping the same relative paths, so the version works on its own.
+//   1. Stores every image the exported HTML references (from designs/) once in published/assets/,
+//      named by content hash, and rewrites only those image paths in the HTML to ../../assets/<hash>.<ext>.
+//      Images shared between versions are not duplicated.
 //   2. Writes a simple index.html for the version that links to each exported screen.
 //   3. Adds the version to published/manifest.json (refuses if it already exists).
 const fs = require("fs");
 const path = require("path");
-const { DESIGNS, VERSIONS, MANIFEST, SEMVER, assetRefs, screenTitle, readManifest, compareSemver } = require("./lib");
+const { DESIGNS, VERSIONS, ASSETS, MANIFEST, SEMVER, ASSETS_FROM_VERSION, rewriteRefs, storeAsset, screenTitle, readManifest, compareSemver } = require("./lib");
 
 const args = process.argv.slice(2);
 const version = args[0];
@@ -46,34 +47,35 @@ if (!htmlFiles.length) {
   process.exit(1);
 }
 
-// 1. Copy referenced assets.
-let copied = 0;
+// 1. Move referenced images into the shared store and point the HTML at it.
+//    The export references images relative to the .pen file (designs/); only those paths change.
 const missing = [];
 const screens = [];
+const outputs = [];
+const before = fs.existsSync(ASSETS) ? fs.readdirSync(ASSETS).length : 0;
+const used = new Set();
 for (const file of htmlFiles) {
   const html = fs.readFileSync(path.join(dir, file), "utf8");
-  for (const ref of assetRefs(html)) {
-    const from = path.join(DESIGNS, ref);
-    const to = path.join(dir, ref);
-    if (!path.resolve(to).startsWith(dir + path.sep)) {
-      missing.push(`${file}: ruta fuera de la versión (${ref})`);
-      continue;
-    }
-    if (fs.existsSync(to)) continue;
-    if (!fs.existsSync(from)) {
+  const rewritten = rewriteRefs(html, (ref) => {
+    if (ref.startsWith(ASSETS_FROM_VERSION)) return undefined; // already rewritten
+    const from = path.resolve(DESIGNS, ref);
+    if (!from.startsWith(DESIGNS + path.sep) || !fs.existsSync(from)) {
       missing.push(`${file}: ${ref}`);
-      continue;
+      return undefined;
     }
-    fs.mkdirSync(path.dirname(to), { recursive: true });
-    fs.copyFileSync(from, to);
-    copied++;
-  }
+    const name = storeAsset(from);
+    used.add(name);
+    return ASSETS_FROM_VERSION + name;
+  });
+  outputs.push([file, rewritten]);
   screens.push({ id: file.replace(/\.html$/, ""), title: screenTitle(html, file), path: file });
 }
 if (missing.length) {
-  console.error("Faltan assets referenciados por el export:\n  " + missing.join("\n  "));
+  console.error("Faltan assets referenciados por el export (deben estar dentro de designs/):\n  " + missing.join("\n  "));
   process.exit(1);
 }
+for (const [file, html] of outputs) fs.writeFileSync(path.join(dir, file), html);
+const added = fs.readdirSync(ASSETS).length - before;
 
 // 2. Version index page (static, works without the portal).
 const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -116,5 +118,5 @@ manifest.versions.sort((a, b) => compareSemver(b.version, a.version));
 manifest.latest = manifest.versions[0].version;
 fs.writeFileSync(MANIFEST, JSON.stringify(manifest, null, 2) + "\n");
 
-console.log(`${version}: ${screens.length} pantallas, ${copied} assets copiados, manifest actualizado.`);
+console.log(`${version}: ${screens.length} pantallas, ${used.size} imágenes (${added} nuevas en published/assets/, ${used.size - added} reutilizadas), manifest actualizado.`);
 console.log(`Siguiente: node scripts/validate.js && git add published && git commit -m "design: ${version}"`);

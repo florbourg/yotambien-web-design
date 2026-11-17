@@ -12,18 +12,19 @@ Esta es una prueba de concepto. No está conectada a React, Storybook ni al cód
 
 ```text
 designs/                         Fuente editable (se abre con pen.dev)
-  yotambien-web.pen              Las 7 páginas + el design system (DS · 01 y DS · 02)
+  yotambien-web.pen              Dos secciones en el canvas: «Pantallas» (7 páginas) y «Design System» (DS · 01 y DS · 02)
   yotambien-web-assets/          Imágenes usadas en el .pen
   yotambien-web/public/brand/    Logos e íconos usados en el .pen
 published/
   manifest.json                  Lista de versiones (la lee el portal)
-  versions/vX.Y.Z/               Una carpeta por versión, inmutable
+  assets/                        Imágenes compartidas por todas las versiones, una sola vez (<hash>.ext)
+  versions/vX.Y.Z/               Una carpeta por versión, inmutable (solo HTML)
     home.html, escuela.html …    Export HTML real de pen.dev, una pantalla por archivo
     index.html                   Índice estático de la versión
-    yotambien-web-assets/ …      Copia de las imágenes que usa esa versión
 portal/                          Sitio estático (HTML/CSS/JS sin frameworks)
 scripts/
-  finalize-version.js            Copia assets, crea el índice y agrega la versión al manifest
+  finalize-version.js            Guarda las imágenes en published/assets/, crea el índice y agrega la versión al manifest
+  migrate-shared-assets.js       Migración única (2026-11-18) de v1.0.0/v2.0.0 al almacén compartido
   validate.js                    Valida estructura, manifest, archivos y assets
   build.js                       Arma _site/ (portal + published/) para GitHub Pages
 .github/workflows/deploy.yml     Valida y publica en GitHub Pages
@@ -32,7 +33,8 @@ scripts/
 ### Cambios respecto de la estructura propuesta, y por qué
 
 - **El `.pen` está en `designs/`, no en `designs/screens/`.** Un solo archivo contiene todas las páginas y el design system, así que no hay `foundations/` separado. Además el `.pen` referencia las imágenes con rutas relativas (`yotambien-web-assets/…`, `yotambien-web/public/brand/…`). Si se mueve el archivo sin sus carpetas, las imágenes se rompen.
-- **Las imágenes de cada versión no van en `assets/`.** El export de pen.dev mantiene las mismas rutas relativas que usa el `.pen`. Para no tocar el HTML exportado, las imágenes se copian dentro de la versión respetando esas rutas.
+- **Las imágenes no se duplican entre versiones.** Van todas a `published/assets/`, con nombre según su contenido (hash SHA-256). Si una imagen no cambia, todas las versiones usan el mismo archivo; si cambia, se guarda con otro nombre y las versiones viejas siguen mostrando la original. `finalize-version.js` reescribe en el HTML exportado **solo las rutas de las imágenes** (`yotambien-web-assets/x.png` → `../../assets/<hash>.png`); el resto del export queda igual.
+- **El `.pen` está organizado en dos secciones.** pen.dev no tiene páginas: todo vive en un único canvas. Por eso hay dos frames contenedores, **Pantallas** y **Design System** (con los 29 componentes reutilizables dentro de DS · 02). Agregá las pantallas nuevas dentro de `Pantallas › Frames` y lo del design system dentro de `Design System › Frames`.
 
 ## Cómo funciona el export (lo que se probó)
 
@@ -56,7 +58,7 @@ Convención: `v1.1.0` para un cambio de diseño significativo y `v1.1.1` para un
    ```
 2. **Editá** `designs/yotambien-web.pen` en pen.dev (abrí el archivo **del repo**, no otra copia) y guardá.
 3. **Exportá a HTML** dentro de `published/versions/v1.1.0/`, un archivo por frame. Hay dos formas:
-   - **Con Claude Code + MCP de pen.dev** (la probada): pedile _"exportá cada frame de nivel superior de designs/yotambien-web.pen como html-css a published/versions/v1.1.0/&lt;nombre&gt;.html"_. Por dentro corre:
+   - **Con Claude Code + MCP de pen.dev** (la probada): pedile _"exportá cada frame dentro de las secciones Pantallas y Design System de designs/yotambien-web.pen como html-css a published/versions/v1.1.0/&lt;nombre&gt;.html"_. Por dentro corre:
      ```js
      Export(["K2QR7"], "html-css", "<repo>/published/versions/v1.1.0/home.html")
      ```
@@ -69,7 +71,7 @@ Convención: `v1.1.0` para un cambio de diseño significativo y `v1.1.1` para un
      --order home,escuela,productora,formacion,nosotros,dona,portfolio,ds-01-fundamentos,ds-02-componentes
    node scripts/validate.js
    ```
-   Esto copia las imágenes referenciadas, crea `index.html` y agrega la entrada a `manifest.json` (fecha de hoy, pantallas tomadas del HTML).
+   Esto guarda las imágenes nuevas en `published/assets/` (las que ya estaban se reutilizan), crea `index.html` y agrega la entrada a `manifest.json` (fecha de hoy, pantallas tomadas del HTML).
 5. **Revisá localmente** (opcional):
    ```sh
    node scripts/build.js && npx serve _site   # o: cd _site && python3 -m http.server
@@ -117,7 +119,7 @@ Si agregás `penUrl`, el portal muestra el botón "Abrir en pen.dev".
 
 `.github/workflows/deploy.yml` corre en cada push a `main`, en cada PR a `main` y a mano (`workflow_dispatch`):
 
-1. `validate.js`: estructura, manifest, que existan los HTML y los assets referenciados, y que no se haya modificado ninguna versión ya publicada.
+1. `validate.js`: estructura, manifest, que existan los HTML y las imágenes referenciadas, que cada imagen de `published/assets/` coincida con su hash, y que no se haya modificado ni borrado nada ya publicado (versiones e imágenes).
 2. `build.js`: arma `_site/`.
 3. Solo en `main`: `actions/configure-pages` → `actions/upload-pages-artifact` → `actions/deploy-pages`.
 
@@ -135,5 +137,9 @@ Todos los links son relativos, así que funcionan bajo el subpath `/yotambien-we
 - **El export no se puede automatizar en CI**: requiere Pen.app abierto en una Mac con sesión iniciada.
 - El HTML es una foto estática de cada frame: ancho fijo, sin interacción ni responsive.
 - Las fuentes dependen de Google Fonts en línea.
-- Cada versión copia sus imágenes (~22 MB en v1.0.0). Con muchas versiones el repo crece. Si llegara a ser un problema, se puede evaluar Git LFS o deduplicar los assets.
+- Las imágenes se guardan una sola vez (~20 MB hoy); cada versión nueva suma solo su HTML (~1,2 MB) y las imágenes que realmente cambiaron. Las imágenes que ya no use ninguna versión no se borran (`validate.js` las avisa).
 - El `.pen` está cifrado: Git guarda las versiones, pero no muestra diffs legibles. Las diferencias se ven comparando las versiones publicadas.
+
+## Migraciones de contenido publicado
+
+Las versiones publicadas no se editan. La única excepción es una migración explícita y revisada, como la del 2026-11-18, que pasó las imágenes de v1.0.0 y v2.0.0 al almacén compartido sin cambiar cómo se ven. En ese caso, el PR (y su commit de merge) debe incluir `[migracion]` en el título para que el CI omita el control de inmutabilidad.
