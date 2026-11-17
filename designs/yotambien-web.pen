@@ -12260,7 +12260,7 @@
                           "id": "EubgE",
                           "name": "Version",
                           "fill": "$gray",
-                          "content": "Sistema de diseño · v2.0 · Nov 2026",
+                          "content": "Sistema de diseño · v1.1 · Nov 2026",
                           "fontFamily": "$font-primary",
                           "fontSize": 13,
                           "fontWeight": "500",
@@ -19509,7 +19509,7 @@
                           "id": "X6J9n",
                           "name": "Version",
                           "fill": "$gray",
-                          "content": "Sistema de diseño · v1.0 · Nov 2026",
+                          "content": "Sistema de diseño · v1.1 · Nov 2026",
                           "fontFamily": "$font-primary",
                           "fontSize": 13,
                           "fontWeight": "500",
@@ -20153,6 +20153,233 @@
                                   "descendants": {
                                     "V3sxmG": {
                                       "content": "LIBRO"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "e8ZVRN",
+                      "name": "Doc · Badge",
+                      "width": "fill_container",
+                      "stroke": "$smoke",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 48,
+                      "padding": [
+                        40,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "CJBoU",
+                          "name": "Spec",
+                          "width": 380,
+                          "layout": "vertical",
+                          "gap": 14,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Fye3j",
+                              "name": "Name",
+                              "fill": "$ink",
+                              "content": "Badge",
+                              "fontFamily": "$font-primary",
+                              "fontSize": 26,
+                              "fontWeight": "800"
+                            },
+                            {
+                              "type": "text",
+                              "id": "stKQd",
+                              "name": "Path",
+                              "fill": "$teal-deep",
+                              "content": "src/components/ui/Badge.tsx · nuevo en ds-v1.1.0",
+                              "fontFamily": "$font-primary",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "ZJApq",
+                              "name": "Description",
+                              "fill": "$ink-soft",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Pastilla de estado para cursos, talleres y convocatorias: inscripciones abiertas, cupos agotados, novedades. Punto de color + texto corto.",
+                              "lineHeight": 1.6,
+                              "fontFamily": "$font-primary",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "lf0D4",
+                              "name": "Props",
+                              "width": "fill_container",
+                              "fill": "$mist",
+                              "cornerRadius": "$radius-sm",
+                              "layout": "vertical",
+                              "gap": 6,
+                              "padding": 16,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "POFwS",
+                                  "name": "Props Title",
+                                  "fill": "$slate",
+                                  "content": "PROPS",
+                                  "fontFamily": "$font-primary",
+                                  "fontSize": 11,
+                                  "fontWeight": "800",
+                                  "letterSpacing": 1.5
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "QN3LX",
+                                  "name": "Prop 1",
+                                  "fill": "$ink",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "text: string (frase corta)",
+                                  "lineHeight": 1.5,
+                                  "fontFamily": "$font-primary",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "BebyN",
+                                  "name": "Prop 2",
+                                  "fill": "$ink",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "tone: teal (default) · pink · neutral",
+                                  "lineHeight": 1.5,
+                                  "fontFamily": "$font-primary",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "X1XX4L",
+                                  "name": "Prop 3",
+                                  "fill": "$ink",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "padding 6/14 · radio full · 13 px semibold",
+                                  "lineHeight": 1.5,
+                                  "fontFamily": "$font-primary",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "yxj67",
+                              "name": "Tokens",
+                              "fill": "$slate",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Tokens: teal, pink, mist, ink · radius-full",
+                              "lineHeight": 1.5,
+                              "fontFamily": "$font-primary",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "W3hTY1",
+                          "name": "Preview",
+                          "width": "fill_container",
+                          "fill": "$white",
+                          "cornerRadius": "$radius-md",
+                          "stroke": "$smoke",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "gap": 24,
+                          "padding": 32,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "TBTC0",
+                              "name": "Badge",
+                              "reusable": true,
+                              "fill": "#3caf971f",
+                              "cornerRadius": "$radius-full",
+                              "gap": 8,
+                              "padding": [
+                                6,
+                                14
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "ellipse",
+                                  "id": "Utyp3",
+                                  "name": "Dot",
+                                  "fill": "$teal",
+                                  "width": 8,
+                                  "height": 8
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "TR77l",
+                                  "name": "Label",
+                                  "fill": "$teal-deep",
+                                  "content": "Inscripciones abiertas",
+                                  "lineHeight": 1,
+                                  "fontFamily": "$font-primary",
+                                  "fontSize": 13,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "T9wxB",
+                              "name": "Row Badges",
+                              "gap": 16,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "id": "mkybt",
+                                  "type": "ref",
+                                  "ref": "TBTC0",
+                                  "name": "Badge / pink",
+                                  "fill": "#df36751f",
+                                  "descendants": {
+                                    "Utyp3": {
+                                      "fill": "$pink"
+                                    },
+                                    "TR77l": {
+                                      "content": "Cupos agotados",
+                                      "fill": "$pink-deep"
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "OUpNH",
+                                  "type": "ref",
+                                  "ref": "TBTC0",
+                                  "name": "Badge / neutral",
+                                  "fill": "$mist",
+                                  "descendants": {
+                                    "Utyp3": {
+                                      "fill": "$ink"
+                                    },
+                                    "TR77l": {
+                                      "content": "Nuevo",
+                                      "fill": "$ink"
                                     }
                                   }
                                 }
