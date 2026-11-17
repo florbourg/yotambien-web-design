@@ -2,8 +2,27 @@
   "title": "Yo También! · Diseño web",
   "jiraBaseUrl": null,
   "library": {
-    "latest": "ds-v1.0.0",
+    "latest": "ds-v1.1.0",
     "versions": [
+      {
+        "id": "ds-v1.1.0",
+        "date": "2026-11-18",
+        "notes": "Nuevo componente Badge (pastilla de estado: inscripciones abiertas, cupos agotados, nuevo). Encabezados del DS pasan a v1.1. [Ejemplo de evolución]",
+        "source": "designs/yotambien-web.pen",
+        "entry": "library/ds-v1.1.0/index.html",
+        "screens": [
+          {
+            "id": "ds-01-fundamentos",
+            "title": "DS · 01 Fundamentos",
+            "path": "library/ds-v1.1.0/ds-01-fundamentos.html"
+          },
+          {
+            "id": "ds-02-componentes",
+            "title": "DS · 02 Componentes",
+            "path": "library/ds-v1.1.0/ds-02-componentes.html"
+          }
+        ]
+      },
       {
         "id": "ds-v1.0.0",
         "date": "2026-11-18",
