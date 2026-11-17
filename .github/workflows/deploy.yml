@@ -1,0 +1,60 @@
+name: Deploy design portal
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Validate structure, manifest, entry points and assets
+        env:
+          # Previously published versions must not change (push: previous main; PR: target branch).
+          BASE_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+        run: node scripts/validate.js
+
+      - name: Build site
+        run: node scripts/build.js
+
+      - name: Configure Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    # Only main is published. Pull requests (feature branches) are validated, never deployed.
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
