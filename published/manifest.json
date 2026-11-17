@@ -115,6 +115,31 @@
           ]
         }
       ]
+    },
+    {
+      "key": "TBD-2",
+      "title": "Talleres abiertos",
+      "type": "feature",
+      "status": "en-diseno",
+      "created": "2026-11-18",
+      "updated": "2026-11-18",
+      "iterations": [
+        {
+          "id": "r1",
+          "date": "2026-11-18",
+          "notes": "Nueva página con el listado de talleres e inscripciones, armada con componentes del DS (incluye Badge de ds-v1.1.0). [Ejemplo de evolución]",
+          "source": "designs/yotambien-web.pen",
+          "library": "ds-v1.1.0",
+          "entry": "work/TBD-2/r1/index.html",
+          "screens": [
+            {
+              "id": "talleres",
+              "title": "Talleres",
+              "path": "work/TBD-2/r1/talleres.html"
+            }
+          ]
+        }
+      ]
     }
   ],
   "legacy": {

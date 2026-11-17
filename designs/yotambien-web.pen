@@ -28015,6 +28015,302 @@
                   ]
                 }
               ]
+            },
+            {
+              "type": "frame",
+              "id": "Cup6f",
+              "name": "TBD-2 · Talleres abiertos",
+              "fill": "#FFFFFF",
+              "cornerRadius": 32,
+              "layout": "vertical",
+              "gap": 64,
+              "padding": 96,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "X5RTVS",
+                  "name": "Ticket Label",
+                  "fill": "#1A1A1A",
+                  "content": "TBD-2 · Talleres abiertos",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 96,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "joQpO",
+                  "name": "Pantallas",
+                  "gap": 160,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "ervWq",
+                      "name": "Talleres",
+                      "clip": true,
+                      "width": 1440,
+                      "fill": "$white",
+                      "layout": "vertical",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "ymC68",
+                          "name": "Top",
+                          "width": "fill_container",
+                          "fill": "$ink",
+                          "layout": "vertical",
+                          "gap": 16,
+                          "padding": [
+                            24,
+                            0,
+                            40,
+                            0
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "id": "U7lzQa",
+                              "type": "ref",
+                              "ref": "dslua",
+                              "name": "Header"
+                            },
+                            {
+                              "id": "WAA0h",
+                              "type": "ref",
+                              "ref": "g0YRep",
+                              "name": "PageHero",
+                              "descendants": {
+                                "ZRyo3": {
+                                  "content": "Inscripciones"
+                                },
+                                "ULf5t": {
+                                  "content": "TALLERES ABIERTOS"
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "WK4mh",
+                          "name": "Talleres Section",
+                          "width": 1140,
+                          "layout": "vertical",
+                          "gap": 48,
+                          "padding": [
+                            96,
+                            0
+                          ],
+                          "children": [
+                            {
+                              "id": "cdJN0",
+                              "type": "ref",
+                              "ref": "VjH34",
+                              "name": "SectionTitle",
+                              "descendants": {
+                                "MH9fs": {
+                                  "content": "TALLERES 2027",
+                                  "fill": "$ink"
+                                },
+                                "V5Krl": {
+                                  "enabled": false
+                                }
+                              }
+                            },
+                            {
+                              "type": "text",
+                              "id": "m4xkj",
+                              "name": "Intro",
+                              "fill": "$ink-soft",
+                              "textGrowth": "fixed-width",
+                              "width": 720,
+                              "content": "Elegí tu taller y anotate. Los cupos son limitados y cada grupo cuenta con apoyos adaptados a cada participante.",
+                              "lineHeight": 1.6,
+                              "fontFamily": "$font-primary",
+                              "fontSize": 18,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "JJOHm",
+                              "name": "Cards",
+                              "width": "fill_container",
+                              "gap": 36,
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "jY1jL",
+                                  "name": "Taller · FOTOGRAFÍA INICIAL",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 14,
+                                  "children": [
+                                    {
+                                      "id": "v5tNN1",
+                                      "type": "ref",
+                                      "ref": "TBTC0",
+                                      "name": "Badge",
+                                      "descendants": {
+                                        "TR77l": {
+                                          "content": "Inscripciones abiertas"
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "id": "A0YR9L",
+                                      "type": "ref",
+                                      "ref": "T385Y",
+                                      "name": "TrainingCard",
+                                      "width": "fill_container",
+                                      "descendants": {
+                                        "BrUna": {
+                                          "content": "FOTOGRAFÍA INICIAL"
+                                        }
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "k3SBwG",
+                                  "name": "Taller · EDICIÓN DE VIDEO",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 14,
+                                  "children": [
+                                    {
+                                      "id": "S0yYUg",
+                                      "type": "ref",
+                                      "ref": "TBTC0",
+                                      "name": "Badge",
+                                      "descendants": {
+                                        "TR77l": {
+                                          "content": "Inscripciones abiertas"
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "id": "pJmGD",
+                                      "type": "ref",
+                                      "ref": "T385Y",
+                                      "name": "TrainingCard",
+                                      "width": "fill_container",
+                                      "descendants": {
+                                        "BrUna": {
+                                          "content": "EDICIÓN DE VIDEO"
+                                        }
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "uGPYA",
+                                  "name": "Taller · GUION Y RELATO",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 14,
+                                  "children": [
+                                    {
+                                      "id": "y7iVO",
+                                      "type": "ref",
+                                      "ref": "TBTC0",
+                                      "name": "Badge",
+                                      "fill": "#df36751f",
+                                      "descendants": {
+                                        "Utyp3": {
+                                          "fill": "$pink"
+                                        },
+                                        "TR77l": {
+                                          "content": "Cupos agotados",
+                                          "fill": "$pink-deep"
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "id": "s5Z7yc",
+                                      "type": "ref",
+                                      "ref": "T385Y",
+                                      "name": "TrainingCard",
+                                      "width": "fill_container",
+                                      "descendants": {
+                                        "BrUna": {
+                                          "content": "GUION Y RELATO"
+                                        }
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "OR4cb",
+                                  "name": "Taller · TALLER DE SONIDO",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 14,
+                                  "children": [
+                                    {
+                                      "id": "aS0sp",
+                                      "type": "ref",
+                                      "ref": "TBTC0",
+                                      "name": "Badge",
+                                      "fill": "$mist",
+                                      "descendants": {
+                                        "Utyp3": {
+                                          "fill": "$ink"
+                                        },
+                                        "TR77l": {
+                                          "content": "Nuevo",
+                                          "fill": "$ink"
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "id": "kYg5L",
+                                      "type": "ref",
+                                      "ref": "T385Y",
+                                      "name": "TrainingCard",
+                                      "width": "fill_container",
+                                      "descendants": {
+                                        "BrUna": {
+                                          "content": "TALLER DE SONIDO"
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "k931p",
+                          "name": "Bottom",
+                          "width": "fill_container",
+                          "fill": "$ink",
+                          "layout": "vertical",
+                          "padding": [
+                            48,
+                            0,
+                            24,
+                            0
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "id": "X5cqpE",
+                              "type": "ref",
+                              "ref": "tsiF9",
+                              "name": "Footer"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
