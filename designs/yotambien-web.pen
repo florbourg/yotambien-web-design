@@ -27157,13 +27157,18 @@
                                           "name": "ul",
                                           "context": "ul",
                                           "width": 1136,
+                                          "gap": 12,
                                           "justifyContent": "center",
+                                          "alignItems": "center",
                                           "children": [
                                             {
                                               "type": "frame",
                                               "id": "eiTtZ",
+                                              "x": 476,
+                                              "y": 0,
                                               "name": "span",
                                               "context": "span",
+                                              "enabled": false,
                                               "height": 23,
                                               "layout": "vertical",
                                               "children": [
@@ -27181,6 +27186,75 @@
                                                   "fontWeight": "normal"
                                                 }
                                               ]
+                                            },
+                                            {
+                                              "id": "uE3rt",
+                                              "type": "ref",
+                                              "ref": "wx3BQ",
+                                              "name": "FilterChip · Todos",
+                                              "fill": "$white",
+                                              "descendants": {
+                                                "BweD7": {
+                                                  "content": "Todos",
+                                                  "fill": "$ink",
+                                                  "fontWeight": "600"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "id": "XxWN2",
+                                              "type": "ref",
+                                              "ref": "wx3BQ",
+                                              "name": "FilterChip · Destacadas",
+                                              "descendants": {
+                                                "BweD7": {
+                                                  "content": "Destacadas"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "id": "ib9BY",
+                                              "type": "ref",
+                                              "ref": "wx3BQ",
+                                              "name": "FilterChip · Eventos",
+                                              "descendants": {
+                                                "BweD7": {
+                                                  "content": "Eventos"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "id": "ZOzvp",
+                                              "type": "ref",
+                                              "ref": "wx3BQ",
+                                              "name": "FilterChip · Institucional",
+                                              "descendants": {
+                                                "BweD7": {
+                                                  "content": "Institucional"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "id": "paMQs",
+                                              "type": "ref",
+                                              "ref": "wx3BQ",
+                                              "name": "FilterChip · Spots",
+                                              "descendants": {
+                                                "BweD7": {
+                                                  "content": "Spots"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "id": "pbFl4",
+                                              "type": "ref",
+                                              "ref": "wx3BQ",
+                                              "name": "FilterChip · Fotografía",
+                                              "descendants": {
+                                                "BweD7": {
+                                                  "content": "Fotografía"
+                                                }
+                                              }
                                             }
                                           ]
                                         }
@@ -27248,6 +27322,22 @@
                                       "gap": 20,
                                       "padding": 10,
                                       "children": [
+                                        {
+                                          "id": "P01wgh",
+                                          "type": "ref",
+                                          "ref": "TBTC0",
+                                          "name": "Badge · Nuevo",
+                                          "fill": "$mist",
+                                          "descendants": {
+                                            "Utyp3": {
+                                              "fill": "$pink"
+                                            },
+                                            "TR77l": {
+                                              "content": "Nuevo proyecto",
+                                              "fill": "$ink"
+                                            }
+                                          }
+                                        },
                                         {
                                           "type": "text",
                                           "id": "R9cDP",

@@ -95,10 +95,25 @@
       "key": "TBD-1",
       "title": "Portfolio",
       "type": "feature",
-      "status": "en-diseno",
+      "status": "en-revision",
       "created": "2026-11-18",
       "updated": "2026-11-18",
       "iterations": [
+        {
+          "id": "r2",
+          "date": "2026-11-18",
+          "notes": "Revisión: filtros con FilterChip en lugar de texto plano y Badge «Nuevo proyecto» en el destacado (DS ds-v1.1.0). [Ejemplo de evolución]",
+          "source": "designs/yotambien-web.pen",
+          "library": "ds-v1.1.0",
+          "entry": "work/TBD-1/r2/index.html",
+          "screens": [
+            {
+              "id": "portfolio",
+              "title": "Portfolio",
+              "path": "work/TBD-1/r2/portfolio.html"
+            }
+          ]
+        },
         {
           "id": "r1",
           "date": "2026-11-18",
