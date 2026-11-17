@@ -4,7 +4,8 @@
 const fs = require("fs");
 const path = require("path");
 const { execSync } = require("child_process");
-const { ROOT, DESIGNS, PUBLISHED, VERSIONS, MANIFEST, SEMVER, assetRefs, compareSemver } = require("./lib");
+const { ROOT, DESIGNS, PUBLISHED, VERSIONS, ASSETS, MANIFEST, SEMVER, assetRefs, hashedName, compareSemver } = require("./lib");
+const usedAssets = new Set();
 
 const errors = [];
 const err = (m) => errors.push(m);
@@ -48,8 +49,14 @@ if (manifest) {
       const html = fs.readFileSync(abs, "utf8");
       for (const ref of assetRefs(html).filter((r) => !r.endsWith("/"))) {
         const a = path.resolve(path.dirname(abs), ref);
-        if (!a.startsWith(path.join(VERSIONS, v.version) + path.sep)) err(`${tag}: ${f} referencia fuera de su versión: ${ref}`);
+        const inVersion = a.startsWith(path.join(VERSIONS, v.version) + path.sep);
+        const inStore = a.startsWith(ASSETS + path.sep);
+        if (!inVersion && !inStore) err(`${tag}: ${f} referencia fuera de su versión y de published/assets/: ${ref}`);
         else if (!fs.existsSync(a)) err(`${tag}: ${f} referencia un asset inexistente: ${ref}`);
+        else if (inStore) {
+          usedAssets.add(path.basename(a));
+          if (hashedName(a) !== path.basename(a)) err(`${tag}: published/assets/${path.basename(a)} no coincide con su hash (¿se modificó?)`);
+        }
       }
     }
   }
@@ -61,16 +68,23 @@ if (manifest) {
       if (!seen.has(d)) err(`published/versions/${d} no está en el manifest`);
     }
   }
+  if (fs.existsSync(ASSETS)) {
+    const orphans = fs.readdirSync(ASSETS).filter((f) => !f.startsWith(".") && !usedAssets.has(f));
+    if (orphans.length) console.warn(`⚠ ${orphans.length} archivo(s) en published/assets/ sin usar: ${orphans.join(", ")}`);
+  }
 }
 
-// Immutability (CI): published version files that existed at BASE_SHA must be unchanged.
+// Immutability (CI): published version files and shared assets that existed at BASE_SHA must be unchanged.
+// ALLOW_PUBLISHED_CHANGES=1 is only for explicit, reviewed migrations (see README).
 const base = process.env.BASE_SHA;
-if (base && !/^0+$/.test(base)) {
+if (base && !/^0+$/.test(base) && process.env.ALLOW_PUBLISHED_CHANGES === "1") {
+  console.warn("⚠ Migración: se omite el control de inmutabilidad de versiones publicadas.");
+} else if (base && !/^0+$/.test(base)) {
   try {
-    const out = execSync(`git diff --name-status ${base} HEAD -- published/versions`, { cwd: ROOT, encoding: "utf8" });
+    const out = execSync(`git diff --name-status ${base} HEAD -- published/versions published/assets`, { cwd: ROOT, encoding: "utf8" });
     for (const line of out.trim().split("\n").filter(Boolean)) {
       const [status, file] = line.split("\t");
-      if (status !== "A") err(`Versión publicada modificada (${status}): ${file}. Creá una versión nueva en lugar de editarla.`);
+      if (status !== "A") err(`Contenido publicado modificado (${status}): ${file}. Creá una versión nueva en lugar de editarla.`);
     }
   } catch (e) {
     err(`No se pudo comprobar la inmutabilidad contra ${base}: ${e.message.split("\n")[0]}`);
