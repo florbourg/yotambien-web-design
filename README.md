@@ -1,145 +1,195 @@
 # Yo También! · Repositorio de diseño web
 
-Versionado y publicación de los diseños del sitio de Yo También!, hechos en [pen.dev](https://pen.dev).
+Diseños del sitio de Yo También! hechos en [pen.dev](https://pen.dev), versionados con un flujo parecido al de desarrollo y publicados en un único portal.
 
-- **Portal publicado:** https://florbourg.github.io/yotambien-web-design/
+- **Portal:** https://florbourg.github.io/yotambien-web-design/
 - **Fuente editable:** `designs/yotambien-web.pen` (pen.dev es la fuente de verdad)
 - **Feedback:** se sigue usando el sistema de comentarios de pen.dev.
 
-Esta es una prueba de concepto. No está conectada a React, Storybook ni al código de producción.
+## El modelo
+
+| Sección (en el `.pen` y en el portal) | Qué contiene | Cómo se publica | Tag de git |
+|---|---|---|---|
+| **Design System** | Fundamentos (DS · 01) y componentes reutilizables (DS · 02): la "librería" con la que se construyen las pantallas | Versiones `ds-vX.Y.Z` | `ds-vX.Y.Z` |
+| **En progreso** | Un contenedor por ticket de Jira: `CLAVE-123 · Título` (feature o ajuste/fix) | Iteraciones `r1`, `r2`… con estado | — |
+| **Producción** | Las pantallas que están hoy en el sitio productivo | Releases `prod-AAAA.MM.DD` (foto completa de la sección) | `prod-AAAA.MM.DD` |
+| **Archivo** (solo portal) | v1.0.0 y v2.0.0, del primer modelo | Solo lectura | `design-v1.0.0`, `design-v2.0.0` |
+
+Equivalencias con desarrollo:
+
+| Desarrollo | Diseño |
+|---|---|
+| Librería / paquete de componentes | Design System (`ds-vX.Y.Z`) |
+| Rama de feature + PR | Rama `design/CLAVE-123-…` + contenedor del ticket en «En progreso» |
+| Preview / staging | Iteraciones `r1`, `r2`… en la pestaña «En progreso» |
+| Release a producción | Promoción: release `prod-AAAA.MM.DD` cuando el código ya está desplegado |
+
+**Estados de un ticket:** `en-diseno` → `en-revision` → `aprobado` → `en-desarrollo` → `en-produccion` (o `descartado`).
+
+**Semver del Design System:** `ds-v2.0.0` para cambios que rompen (por ejemplo, renombrar o quitar un componente), `ds-v1.1.0` para agregar componentes o variantes y `ds-v1.0.1` para correcciones.
 
 ## Estructura
 
 ```text
-designs/                         Fuente editable (se abre con pen.dev)
-  yotambien-web.pen              Dos secciones en el canvas: «Pantallas» (7 páginas) y «Design System» (DS · 01 y DS · 02)
-  yotambien-web-assets/          Imágenes usadas en el .pen
-  yotambien-web/public/brand/    Logos e íconos usados en el .pen
+designs/
+  yotambien-web.pen              Secciones «Producción», «En progreso» y «Design System»
+  yotambien-web-assets/, yotambien-web/public/brand/   Imágenes que usa el .pen
 published/
-  manifest.json                  Lista de versiones (la lee el portal)
-  assets/                        Imágenes compartidas por todas las versiones, una sola vez (<hash>.ext)
-  versions/vX.Y.Z/               Una carpeta por versión, inmutable (solo HTML)
-    home.html, escuela.html …    Export HTML real de pen.dev, una pantalla por archivo
-    index.html                   Índice estático de la versión
-portal/                          Sitio estático (HTML/CSS/JS sin frameworks)
+  manifest.json                  Todo lo publicado: versiones del DS, tickets, releases y archivo
+  assets/                        Imágenes, una sola vez para todo (nombre = hash del contenido)
+  library/ds-vX.Y.Z/             Export de la sección Design System
+  work/CLAVE-123/rN/             Export de las pantallas del ticket, iteración N
+  production/prod-AAAA.MM.DD/    Export completo de la sección Producción
+  versions/v1.0.0, v2.0.0/       Archivo del primer modelo
+portal/                          Portal estático (HTML/CSS/JS sin frameworks)
 scripts/
-  finalize-version.js            Guarda las imágenes en published/assets/, crea el índice y agrega la versión al manifest
-  migrate-shared-assets.js       Migración única (2026-11-18) de v1.0.0/v2.0.0 al almacén compartido
-  validate.js                    Valida estructura, manifest, archivos y assets
-  build.js                       Arma _site/ (portal + published/) para GitHub Pages
-.github/workflows/deploy.yml     Valida y publica en GitHub Pages
+  publish.js                     Registra una publicación (ds | work | prod) después del export
+  set-status.js                  Cambia el estado de un ticket (y su clave o título)
+  validate.js                    Valida manifest, archivos, imágenes e inmutabilidad
+  build.js                       Arma _site/ para GitHub Pages
 ```
 
-### Cambios respecto de la estructura propuesta, y por qué
+### Cómo está organizado el `.pen`
 
-- **El `.pen` está en `designs/`, no en `designs/screens/`.** Un solo archivo contiene todas las páginas y el design system, así que no hay `foundations/` separado. Además el `.pen` referencia las imágenes con rutas relativas (`yotambien-web-assets/…`, `yotambien-web/public/brand/…`). Si se mueve el archivo sin sus carpetas, las imágenes se rompen.
-- **Las imágenes no se duplican entre versiones.** Van todas a `published/assets/`, con nombre según su contenido (hash SHA-256). Si una imagen no cambia, todas las versiones usan el mismo archivo; si cambia, se guarda con otro nombre y las versiones viejas siguen mostrando la original. `finalize-version.js` reescribe en el HTML exportado **solo las rutas de las imágenes** (`yotambien-web-assets/x.png` → `../../assets/<hash>.png`); el resto del export queda igual.
-- **El `.pen` está organizado en dos secciones.** pen.dev no tiene páginas: todo vive en un único canvas. Por eso hay dos frames contenedores, **Pantallas** y **Design System** (con los 29 componentes reutilizables dentro de DS · 02). Agregá las pantallas nuevas dentro de `Pantallas › Frames` y lo del design system dentro de `Design System › Frames`.
+pen.dev no tiene páginas: todo vive en un único canvas. Cada sección es un frame contenedor con un hijo `Frames`:
 
-## Cómo funciona el export (lo que se probó)
+```text
+Producción › Frames › Home, Escuela, Productora, Formacion, Nosotros, Dona
+En progreso › Frames › «TBD-1 · Portfolio» › Pantallas › Portfolio
+Design System › Frames › DS · 01 Fundamentos, DS · 02 Componentes (los 29 componentes)
+```
 
-| Pregunta | Resultado |
-|---|---|
-| ¿Hay CLI de pen.dev? | **No.** Pen.app (v1.2.23) solo trae `mcp-server-darwin-arm64`, un puente hacia la app abierta. No tiene comandos de export. |
-| ¿Se puede exportar a HTML? | **Sí**, con la función `Export(nodeIds, "html-css", ruta)` de la herramienta MCP `execute` (también existe `"html-tailwind"` y png/jpeg/webp/pdf/svg). |
-| ¿Funciona en GitHub Actions? | **No.** El MCP necesita la app de escritorio abierta y con sesión iniciada. Los `.pen` están cifrados y no se pueden leer sin la app. |
-| ¿El HTML incluye todo? | El CSS va inline y las fuentes se cargan desde Google Fonts (hace falta internet). **Las imágenes no se incluyen ni se copian**: quedan referenciadas con rutas relativas al `.pen`. Eso lo resuelve `finalize-version.js`. |
-| ¿Cómo es el HTML? | Fiel visualmente, con anchos fijos en px (las páginas miden ~2315 px). No es responsive ni interactivo. El portal tiene la opción "Ajustar al ancho". |
+- **Las pantallas de los tickets usan instancias de los componentes del Design System.** Si cambiás un componente, el cambio se propaga a todas las secciones.
+- **Para un ticket que modifica una pantalla existente**, copiá la pantalla desde Producción al contenedor del ticket y editá la copia. Producción no se toca hasta la promoción.
+- **Nombres:** el contenedor del ticket se llama exactamente `CLAVE-123 · Título` y sus pantallas van dentro de `Pantallas`. El nombre de cada frame define el nombre del archivo (`Formación` → `formacion.html`).
 
-Por eso el flujo es: **export en tu Mac → todo lo demás automatizado.**
+### ¿Un solo `.pen` o varios?
 
-## Crear una versión nueva
+Por ahora hay **un solo archivo**. Los `.pen` están cifrados y git no puede combinar cambios de dos ramas sobre el mismo archivo. Con una sola diseñadora eso no es un problema: trabajá **un ticket a la vez por rama** y mergeá seguido.
 
-Convención: `v1.1.0` para un cambio de diseño significativo y `v1.1.1` para una corrección menor. Las versiones publicadas no se editan nunca, siempre se crea una nueva (el CI falla si se modifica una existente).
+Si el equipo crece, se puede separar (por ejemplo, un `.pen` por ticket). El repo y el portal ya están preparados, porque cada publicación registra su `source`. Lo que **no está resuelto** es compartir los componentes entre archivos. Resultado de la prueba del 2026-11-18:
 
-1. **Rama de trabajo**
-   ```sh
-   git switch -c diseno/testimonios
-   ```
-2. **Editá** `designs/yotambien-web.pen` en pen.dev (abrí el archivo **del repo**, no otra copia) y guardá.
-3. **Exportá a HTML** dentro de `published/versions/v1.1.0/`, un archivo por frame. Hay dos formas:
-   - **Con Claude Code + MCP de pen.dev** (la probada): pedile _"exportá cada frame dentro de las secciones Pantallas y Design System de designs/yotambien-web.pen como html-css a published/versions/v1.1.0/&lt;nombre&gt;.html"_. Por dentro corre:
-     ```js
-     Export(["K2QR7"], "html-css", "<repo>/published/versions/v1.1.0/home.html")
-     ```
-   - **Desde la interfaz de pen.dev**: usá la opción de export a HTML/CSS si tu versión la muestra (no se verificó en esta prueba) y guardá cada frame como `<nombre>.html` en esa carpeta.
+- El formato `.pen` tiene un campo `imports` para usar componentes de otro archivo.
+- El MCP de pen.dev **no ofrece forma de declararlo** y una referencia a un componente de otro archivo falla ("non-existent node").
+- No se probó si la interfaz de pen.dev permite configurarlo.
 
-   IDs actuales: Home `K2QR7`, Escuela `xJyha`, Productora `RJkP3`, Formacion `I7Sfe`, Nosotros `oM8DK`, Dona `ADXRs`, Portfolio `a1MQt`, DS · 01 `b3qevC`, DS · 02 `ECRWf`.
-4. **Finalizá la versión** (Node 18+):
-   ```sh
-   node scripts/finalize-version.js v1.1.0 --notes "Agrega sección de testimonios en Escuela" \
-     --order home,escuela,productora,formacion,nosotros,dona,portfolio,ds-01-fundamentos,ds-02-componentes
-   node scripts/validate.js
-   ```
-   Esto guarda las imágenes nuevas en `published/assets/` (las que ya estaban se reutilizan), crea `index.html` y agrega la entrada a `manifest.json` (fecha de hoy, pantallas tomadas del HTML).
-5. **Revisá localmente** (opcional):
-   ```sh
-   node scripts/build.js && npx serve _site   # o: cd _site && python3 -m http.server
-   ```
-6. **Commit, push y PR**
-   ```sh
-   git add designs published
-   git commit -m "design: v1.1.0 – testimonios"
-   git push -u origin diseno/testimonios
-   gh pr create --fill
-   ```
-   En el PR, el workflow **valida pero no publica**.
-7. **Merge a `main` y tag.** Al mergear se publica automáticamente. Después:
+Si no se puede, al separar archivos las pantallas quedarían con copias desconectadas de los componentes.
+
+## Flujos de trabajo
+
+En todos los casos: **rama → editar en pen.dev → exportar → `publish.js` → PR → merge a `main`**. El merge publica el portal automáticamente. Los PR se validan pero no se publican.
+
+### A. Trabajar un ticket (feature o ajuste)
+
+1. **Rama**
    ```sh
    git switch main && git pull
-   git tag design-v1.1.0 && git push origin design-v1.1.0
+   git switch -c design/WEB-123-formulario-contacto
+   ```
+2. **En pen.dev:** dentro de `En progreso › Frames`, creá el contenedor `WEB-123 · Formulario de contacto` con un frame `Pantallas` y diseñá adentro (o copiá ahí las pantallas de Producción que vayas a modificar).
+3. **Exportá** las pantallas del ticket a `published/work/WEB-123/r1/` (ver [Exportar](#exportar)).
+4. **Publicá la iteración**
+   ```sh
+   node scripts/publish.js work WEB-123/r1 --title "Formulario de contacto" --type feature --notes "Primera propuesta"
+   node scripts/validate.js
+   ```
+5. **PR y merge**
+   ```sh
+   git add designs published && git commit -m "design(WEB-123): r1 – primera propuesta"
+   git push -u origin HEAD && gh pr create --fill
+   ```
+   Al mergear, el ticket aparece en «En progreso» con estado **En diseño**.
+6. **Cada ronda de cambios** es una iteración nueva (`r2`, `r3`…), que publicás con `publish.js work WEB-123/r2 --notes "..."`. Las anteriores siguen visibles.
+7. **Estados.** Cambialos en la misma rama o en un PR chico:
+   ```sh
+   node scripts/set-status.js WEB-123 en-revision     # pedís revisión (comentarios en pen.dev)
+   node scripts/set-status.js WEB-123 aprobado        # diseño aprobado
+   node scripts/set-status.js WEB-123 en-desarrollo   # desarrollo lo tomó
    ```
 
-## El manifest
+### B. Promover a Producción (cuando desarrollo ya desplegó)
 
-`published/manifest.json` lo genera `finalize-version.js`, pero se puede editar a mano (por ejemplo, para corregir notas antes de publicar):
+Hacelo **solo después de confirmar** que el cambio está en el sitio productivo.
 
-```json
-{
-  "title": "Yo También! · Diseño web",
-  "latest": "v1.0.0",
-  "penUrl": "https://… (opcional, link general al documento de pen.dev)",
-  "versions": [
-    {
-      "version": "v1.0.0",
-      "date": "2026-11-17",
-      "notes": "…",
-      "source": "designs/yotambien-web.pen",
-      "penUrl": "https://… (opcional, por versión)",
-      "entry": "versions/v1.0.0/index.html",
-      "screens": [{ "id": "home", "title": "Home", "path": "versions/v1.0.0/home.html" }]
-    }
-  ]
-}
+1. `git switch -c release/prod-2026-12-01`
+2. **En pen.dev**, mové o copiá las pantallas del ticket a `Producción › Frames`, reemplazando las versiones viejas, y borrá el contenedor del ticket de «En progreso». Su historial queda en el portal.
+3. **Exportá toda la sección Producción** a `published/production/prod-2026.12.01/`. Cada release es una foto completa.
+4. **Publicá el release**:
+   ```sh
+   node scripts/publish.js prod prod-2026.12.01 --tickets WEB-123,WEB-130 --notes "Deploy del 1/12: formulario de contacto"
+   node scripts/validate.js
+   ```
+   Los tickets pasan a **En producción** y quedan enlazados al release.
+5. PR → merge → tag:
+   ```sh
+   git switch main && git pull && git tag prod-2026.12.01 && git push origin prod-2026.12.01
+   ```
+   Si hay dos releases el mismo día, usá `prod-2026.12.01-2`.
+
+### C. Cambiar el Design System
+
+1. `git switch -c ds/badge-component`
+2. **Editá** `Design System › Frames` en pen.dev.
+3. **Exportá la sección** a `published/library/ds-v1.1.0/`.
+4. `node scripts/publish.js ds ds-v1.1.0 --notes "Nuevo componente Badge"`
+5. PR → merge → `git tag ds-v1.1.0 && git push origin ds-v1.1.0`
+
+Cada iteración y cada release guardan con qué versión del DS se diseñaron (campo `library`).
+
+### Clave de Jira provisoria
+
+Si todavía no hay ticket, usá `TBD-1`, `TBD-2`… Cuando exista la clave real:
+
+```sh
+node scripts/set-status.js TBD-1 en-diseno --key WEB-45
 ```
 
-Si agregás `penUrl`, el portal muestra el botón "Abrir en pen.dev".
+Renombrá también el contenedor en el `.pen`. Los archivos ya publicados conservan su carpeta (`work/TBD-1/…`); solo cambia cómo se muestra y enlaza el ticket.
 
-## Publicación (GitHub Actions)
+**Enlace a Jira:** completá `"jiraBaseUrl": "https://tuorg.atlassian.net"` en `published/manifest.json` y el portal muestra «Ver en Jira» en cada ticket.
 
-`.github/workflows/deploy.yml` corre en cada push a `main`, en cada PR a `main` y a mano (`workflow_dispatch`):
+## Exportar
 
-1. `validate.js`: estructura, manifest, que existan los HTML y las imágenes referenciadas, que cada imagen de `published/assets/` coincida con su hash, y que no se haya modificado ni borrado nada ya publicado (versiones e imágenes).
-2. `build.js`: arma `_site/`.
-3. Solo en `main`: `actions/configure-pages` → `actions/upload-pages-artifact` → `actions/deploy-pages`.
+**No hay CLI de pen.dev y el export no corre en GitHub Actions.** Solo funciona con Pen.app abierto en tu Mac, a través de la herramienta MCP `execute`.
 
-Todos los links son relativos, así que funcionan bajo el subpath `/yotambien-web-design/`.
+La forma probada es pedirle a Claude Code algo como: _«exportá la sección Producción de designs/yotambien-web.pen a published/production/prod-2026.12.01/»_. Por dentro corre esta receta, que exporta en el orden del canvas:
 
-## Ver versiones
+```js
+const ROOT = "<ruta al repo>/published/"
+const slug = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")
+const section = name => Get((n, c) => { if (!c.parentCtx) { c.skipChildren(); return n.name === name ? n.id : undefined } return undefined })[0]
+const framesOf = id => Get(id, { depth: 2 }).children.find(c => c.name === "Frames").children
+const exportAll = (frames, dir) => { for (const f of frames) Export([f.id], "html-css", ROOT + dir + "/" + slug(f.name) + ".html") }
 
-- Lista de versiones: https://florbourg.github.io/yotambien-web-design/
-- Una pantalla: `…/#/v1.0.0/home`
-- Siempre la última: `…/#/latest/home`
-- HTML directo: `…/published/versions/v1.0.0/home.html`
+exportAll(framesOf(section("Producción")), "production/prod-2026.12.01")
+exportAll(framesOf(section("Design System")), "library/ds-v1.1.0")
+// Un ticket:
+const t = framesOf(section("En progreso")).find(f => f.name.startsWith("WEB-123 "))
+exportAll(Get(t.id, { depth: 2 }).children.find(c => c.name === "Pantallas").children, "work/WEB-123/r1")
+```
 
-## Limitaciones actuales
+**Qué hace `publish.js` con el export:**
+- Guarda cada imagen una sola vez en `published/assets/` y cambia en el HTML solo las rutas de las imágenes.
+- Genera un `index.html` para la carpeta.
+- Agrega la entrada al manifest.
 
-- **El export no se puede automatizar en CI**: requiere Pen.app abierto en una Mac con sesión iniciada.
-- El HTML es una foto estática de cada frame: ancho fijo, sin interacción ni responsive.
-- Las fuentes dependen de Google Fonts en línea.
-- Las imágenes se guardan una sola vez (~20 MB hoy); cada versión nueva suma solo su HTML (~1,2 MB) y las imágenes que realmente cambiaron. Las imágenes que ya no use ninguna versión no se borran (`validate.js` las avisa).
-- El `.pen` está cifrado: Git guarda las versiones, pero no muestra diffs legibles. Las diferencias se ven comparando las versiones publicadas.
+No genera ni modifica el diseño.
 
-## Migraciones de contenido publicado
+## Reglas que controla el CI
 
-Las versiones publicadas no se editan. La única excepción es una migración explícita y revisada, como la del 2026-11-18, que pasó las imágenes de v1.0.0 y v2.0.0 al almacén compartido sin cambiar cómo se ven. En ese caso, el PR (y su commit de merge) debe incluir `[migracion]` en el título para que el CI omita el control de inmutabilidad.
+`.github/workflows/deploy.yml` corre `validate.js` en cada PR y en cada push a `main`. Solo `main` se publica en GitHub Pages. El CI controla que:
+
+- El manifest sea válido (formatos de ids, estados, tipos, tickets referenciados por releases).
+- Existan todas las pantallas e imágenes, y cada imagen coincida con su hash.
+- Toda carpeta publicada esté registrada en el manifest.
+- **Nada publicado se modifique ni se borre.** Solo `manifest.json` puede cambiar (estados, títulos) y se pueden agregar archivos nuevos. Para corregir algo se publica una iteración, versión o release nuevo.
+- Excepción: una migración explícita y revisada, con `[migracion]` en el título del PR y en el commit de merge.
+
+## Limitaciones
+
+- **El export requiere Pen.app abierto en una Mac.** Cada publicación empieza ahí; el resto (validar, armar el sitio, publicar) es automático.
+- El HTML es una foto estática de cada frame: ancho fijo (~2315 px), sin interacción ni responsive. Las fuentes se cargan desde Google Fonts.
+- El `.pen` está cifrado: git no muestra diffs ni combina cambios. Trabajá un ticket por rama y mergeá seguido.
+- Las imágenes que ya no use nada no se borran (`validate.js` las avisa).
+- El estado de los tickets se actualiza a mano. No hay integración con Jira.
+- **Cuidado al usar el MCP:** si se le pasa la ruta de un `.pen` que no existe, ejecuta sobre el documento que está abierto. Pasó en la prueba de `imports` y se corrigió.

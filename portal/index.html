@@ -8,23 +8,23 @@
 </head>
 <body>
   <header class="top">
-    <a class="brand" href="#">Yo También! <span>Diseño</span></a>
-    <nav id="crumbs" aria-label="Ubicación"></nav>
+    <a class="brand" href="#/produccion">Yo También! <span>Diseño</span></a>
+    <nav class="tabs" aria-label="Secciones">
+      <a href="#/produccion" data-tab="produccion">Producción</a>
+      <a href="#/progreso" data-tab="progreso">En progreso</a>
+      <a href="#/ds" data-tab="ds">Design System</a>
+      <a href="#/archivo" data-tab="archivo">Archivo</a>
+    </nav>
   </header>
 
-  <main id="home" hidden>
-    <section class="intro">
-      <h1 id="title">Versiones de diseño</h1>
-      <p>Exportaciones HTML publicadas desde pen.dev. Cada versión es inmutable.</p>
-    </section>
-    <ol id="versions" class="versions"></ol>
-  </main>
+  <main id="list" class="list" hidden></main>
 
   <main id="viewer" class="viewer" hidden>
-    <aside class="screens">
-      <div class="vmeta"></div>
-      <ul id="screenList"></ul>
-      <div class="vlinks"></div>
+    <aside class="side">
+      <nav id="crumbs" class="crumbs" aria-label="Ubicación"></nav>
+      <div id="meta" class="meta"></div>
+      <ul id="screenList" class="screen-list"></ul>
+      <div id="extra" class="extra"></div>
     </aside>
     <section class="stage">
       <div class="toolbar">
