@@ -1,7 +1,61 @@
 {
   "title": "Yo También! · Diseño web",
-  "latest": "v1.0.0",
+  "latest": "v2.0.0",
   "versions": [
+    {
+      "version": "v2.0.0",
+      "date": "2026-11-17",
+      "notes": "DS · 01 Fundamentos: el encabezado pasa a «Sistema de diseño · v2.0» y el subtítulo a «Las bases visuales». El resto de las pantallas no cambia.",
+      "source": "designs/yotambien-web.pen",
+      "entry": "versions/v2.0.0/index.html",
+      "screens": [
+        {
+          "id": "home",
+          "title": "Home",
+          "path": "versions/v2.0.0/home.html"
+        },
+        {
+          "id": "escuela",
+          "title": "Escuela",
+          "path": "versions/v2.0.0/escuela.html"
+        },
+        {
+          "id": "productora",
+          "title": "Productora",
+          "path": "versions/v2.0.0/productora.html"
+        },
+        {
+          "id": "formacion",
+          "title": "Formacion",
+          "path": "versions/v2.0.0/formacion.html"
+        },
+        {
+          "id": "nosotros",
+          "title": "Nosotros",
+          "path": "versions/v2.0.0/nosotros.html"
+        },
+        {
+          "id": "dona",
+          "title": "Dona",
+          "path": "versions/v2.0.0/dona.html"
+        },
+        {
+          "id": "portfolio",
+          "title": "Portfolio",
+          "path": "versions/v2.0.0/portfolio.html"
+        },
+        {
+          "id": "ds-01-fundamentos",
+          "title": "DS · 01 Fundamentos",
+          "path": "versions/v2.0.0/ds-01-fundamentos.html"
+        },
+        {
+          "id": "ds-02-componentes",
+          "title": "DS · 02 Componentes",
+          "path": "versions/v2.0.0/ds-02-componentes.html"
+        }
+      ]
+    },
     {
       "version": "v1.0.0",
       "date": "2026-11-17",
