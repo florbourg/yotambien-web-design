@@ -28067,6 +28067,378 @@
               "fontFamily": "Montserrat",
               "fontSize": 56,
               "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "FR3rm",
+              "name": "Leyenda",
+              "layout": "vertical",
+              "gap": 24,
+              "padding": [
+                40,
+                0,
+                0,
+                0
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "H8hMJ",
+                  "name": "Leyenda Título",
+                  "fill": "#3B3B3B",
+                  "content": "Cada ticket tiene Estado y Tipo. Escribí uno de estos valores en la pastilla:",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 40,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "l6KQrY",
+                  "name": "Estado",
+                  "gap": 20,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "GZrrC",
+                      "name": "Etiqueta",
+                      "fill": "#6B6B6B",
+                      "content": "Estado:",
+                      "fontFamily": "Montserrat",
+                      "fontSize": 36,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "hDGdX",
+                      "name": "Pill · En diseño",
+                      "fill": "#6B5BD6",
+                      "cornerRadius": 999,
+                      "padding": [
+                        8,
+                        22
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "RgQX6",
+                          "name": "Valor",
+                          "fill": "#FFFFFF",
+                          "content": "En diseño",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 36,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "uytTN",
+                      "name": "Pill · En revisión",
+                      "fill": "#C27C0E",
+                      "cornerRadius": 999,
+                      "padding": [
+                        8,
+                        22
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "dSPxL",
+                          "name": "Valor",
+                          "fill": "#FFFFFF",
+                          "content": "En revisión",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 36,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "MJgvT",
+                      "name": "Pill · Aprobado",
+                      "fill": "#2F7D4F",
+                      "cornerRadius": 999,
+                      "padding": [
+                        8,
+                        22
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "srO3o",
+                          "name": "Valor",
+                          "fill": "#FFFFFF",
+                          "content": "Aprobado",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 36,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "hWeno",
+                      "name": "Pill · En desarrollo",
+                      "fill": "#1F6FB2",
+                      "cornerRadius": 999,
+                      "padding": [
+                        8,
+                        22
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "rIWus",
+                          "name": "Valor",
+                          "fill": "#FFFFFF",
+                          "content": "En desarrollo",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 36,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "t22hZc",
+                      "name": "Pill · Descartado",
+                      "fill": "#9A9A9A",
+                      "cornerRadius": 999,
+                      "padding": [
+                        8,
+                        22
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "HtXTt",
+                          "name": "Valor",
+                          "fill": "#FFFFFF",
+                          "content": "Descartado",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 36,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "pO5NI",
+                  "name": "Tipo",
+                  "gap": 20,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "WQKey",
+                      "name": "Etiqueta",
+                      "fill": "#6B6B6B",
+                      "content": "Tipo:",
+                      "fontFamily": "Montserrat",
+                      "fontSize": 36,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "c6iVmO",
+                      "name": "Pill · Feature",
+                      "fill": "#3B3B3B",
+                      "cornerRadius": 999,
+                      "padding": [
+                        8,
+                        22
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "H7D67",
+                          "name": "Valor",
+                          "fill": "#FFFFFF",
+                          "content": "Feature",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 36,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ql45G",
+                      "name": "Pill · Ajuste",
+                      "fill": "#3B3B3B",
+                      "cornerRadius": 999,
+                      "padding": [
+                        8,
+                        22
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "lk3C9",
+                          "name": "Valor",
+                          "fill": "#FFFFFF",
+                          "content": "Ajuste",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 36,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "EzC58",
+                  "name": "Leyenda Nota",
+                  "fill": "#6B6B6B",
+                  "content": "«En producción» no se escribe acá: lo asigna la promoción a Producción.",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 32,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "dO8oF",
+              "name": "Plantilla de ticket",
+              "fill": "#FFFFFF",
+              "cornerRadius": 32,
+              "stroke": "#B3B3B3",
+              "strokeWidth": 2,
+              "layout": "vertical",
+              "gap": 40,
+              "padding": 64,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "n3PHhD",
+                  "name": "Plantilla Nota",
+                  "fill": "#6B6B6B",
+                  "content": "Plantilla · copiala a «Frames» para empezar un ticket nuevo",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 28,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "j5KN3q",
+                  "name": "Ticket Label",
+                  "fill": "#1A1A1A",
+                  "content": "CLAVE-123 · Título",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 64,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "VCLBv",
+                  "name": "Ticket Info",
+                  "gap": 43,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "wJeGg",
+                      "name": "Estado",
+                      "gap": 14,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "jBVrI",
+                          "name": "Campo",
+                          "fill": "#6B6B6B",
+                          "content": "Estado:",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 36,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "AccO5",
+                          "name": "Pill",
+                          "fill": "#6B5BD6",
+                          "cornerRadius": 999,
+                          "padding": [
+                            9,
+                            22
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Qkwxe",
+                              "name": "Valor",
+                              "fill": "#FFFFFF",
+                              "content": "En diseño",
+                              "fontFamily": "Montserrat",
+                              "fontSize": 36,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ISxYl",
+                      "name": "Tipo",
+                      "gap": 14,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "VePiN",
+                          "name": "Campo",
+                          "fill": "#6B6B6B",
+                          "content": "Tipo:",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 36,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Rhpld",
+                          "name": "Pill",
+                          "fill": "#3B3B3B",
+                          "cornerRadius": 999,
+                          "padding": [
+                            9,
+                            22
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "DnA95",
+                              "name": "Valor",
+                              "fill": "#FFFFFF",
+                              "content": "Feature",
+                              "fontFamily": "Montserrat",
+                              "fontSize": 36,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "c4Wyu",
+                  "name": "Pantallas",
+                  "width": 600,
+                  "height": 200,
+                  "cornerRadius": 16,
+                  "stroke": "#D4D4D5",
+                  "strokeWidth": 2,
+                  "gap": 160
+                }
+              ]
             }
           ]
         },
@@ -28095,6 +28467,99 @@
                   "fontFamily": "Montserrat",
                   "fontSize": 96,
                   "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "p8imdh",
+                  "name": "Ticket Info",
+                  "gap": 58,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "asSGk",
+                      "name": "Estado",
+                      "gap": 19,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "DvrRX",
+                          "name": "Campo",
+                          "fill": "#6B6B6B",
+                          "content": "Estado:",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 48,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Ao4vr",
+                          "name": "Pill",
+                          "fill": "#6B5BD6",
+                          "cornerRadius": 999,
+                          "padding": [
+                            12,
+                            29
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "M043M3",
+                              "name": "Valor",
+                              "fill": "#FFFFFF",
+                              "content": "En diseño",
+                              "fontFamily": "Montserrat",
+                              "fontSize": 48,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "vr8hN",
+                      "name": "Tipo",
+                      "gap": 19,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "o5nCmf",
+                          "name": "Campo",
+                          "fill": "#6B6B6B",
+                          "content": "Tipo:",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 48,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "xaB4l",
+                          "name": "Pill",
+                          "fill": "#3B3B3B",
+                          "cornerRadius": 999,
+                          "padding": [
+                            12,
+                            29
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "ZNvFP",
+                              "name": "Valor",
+                              "fill": "#FFFFFF",
+                              "content": "Feature",
+                              "fontFamily": "Montserrat",
+                              "fontSize": 48,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
                 },
                 {
                   "type": "frame",
@@ -28506,6 +28971,99 @@
                   "fontFamily": "Montserrat",
                   "fontSize": 96,
                   "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "yxQsB",
+                  "name": "Ticket Info",
+                  "gap": 58,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "CjRjs",
+                      "name": "Estado",
+                      "gap": 19,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "iRRxj",
+                          "name": "Campo",
+                          "fill": "#6B6B6B",
+                          "content": "Estado:",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 48,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "oEpbf",
+                          "name": "Pill",
+                          "fill": "#C27C0E",
+                          "cornerRadius": 999,
+                          "padding": [
+                            12,
+                            29
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "BAqNN",
+                              "name": "Valor",
+                              "fill": "#FFFFFF",
+                              "content": "En revisión",
+                              "fontFamily": "Montserrat",
+                              "fontSize": 48,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "MN1KZ",
+                      "name": "Tipo",
+                      "gap": 19,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "r22dUr",
+                          "name": "Campo",
+                          "fill": "#6B6B6B",
+                          "content": "Tipo:",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 48,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "N5zNJt",
+                          "name": "Pill",
+                          "fill": "#3B3B3B",
+                          "cornerRadius": 999,
+                          "padding": [
+                            12,
+                            29
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "CG5WH",
+                              "name": "Valor",
+                              "fill": "#FFFFFF",
+                              "content": "Ajuste",
+                              "fontFamily": "Montserrat",
+                              "fontSize": 48,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
                 },
                 {
                   "type": "frame",
