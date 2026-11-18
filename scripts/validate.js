@@ -78,6 +78,7 @@ function checkCollection(label, list, idRe, folderOf, latest) {
 if (m) {
   for (const k of ["library", "production", "work"]) if (!m[k]) err(`manifest: falta "${k}"`);
   if (m.jiraBaseUrl != null && !/^https:\/\/[^\s]+$/.test(m.jiraBaseUrl)) err("jiraBaseUrl debe ser una URL https o null");
+  if (m.penUrl != null && !/^https:\/\/[^\s]+$/.test(m.penUrl)) err("penUrl debe ser una URL https o null");
 
   const lib = checkCollection("Design System", m.library?.versions || [], L.DS_ID, (p) => `library/${p.id}/`, m.library?.latest);
   if (!lib.size) err("Design System: tiene que haber al menos una versión");

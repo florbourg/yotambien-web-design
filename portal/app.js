@@ -21,13 +21,21 @@
 
   fetch(BASE + "manifest.json", { cache: "no-cache" })
     .then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
-    .then((m) => { M = m; route(); addEventListener("hashchange", route); })
+    .then((m) => {
+      M = m;
+      if (M.penUrl) { $("penLink").href = M.penUrl; $("penLink").hidden = false; }
+      route();
+      addEventListener("hashchange", route);
+    })
     .catch((e) => { $("error").hidden = false; $("error").textContent = `No se pudo cargar el manifest: ${e.message}`; });
 
   // ---------- helpers ----------
   const statusBadge = (s) => `<span class="badge status ${esc(s)}">${esc(STATUS[s] || s)}</span>`;
   const jiraLink = (key) => (M.jiraBaseUrl && !/^TBD-/.test(key)
     ? `<a href="${esc(M.jiraBaseUrl.replace(/\/$/, ""))}/browse/${enc(key)}" target="_blank" rel="noopener">Ver en Jira ↗</a>` : "");
+  // Link to the shared pen.dev document, where anyone can leave comments.
+  const penComment = (what) => (M.penUrl
+    ? `<a class="pen-comment" href="${esc(M.penUrl)}" target="_blank" rel="noopener">💬 Comentar en pen.dev ↗</a><span class="sub">Buscá ${esc(what)} en el canvas.</span>` : "");
   const chips = (hrefBase, screens) => `<div class="chips">${screens.map((s) => `<a href="${hrefBase}/${enc(s.id)}">${esc(s.title)}</a>`).join("")}</div>`;
   const ticketByKey = (k) => M.work.find((t) => t.key === k);
   const setTab = (tab) => document.querySelectorAll(".tabs a").forEach((a) => {
@@ -116,7 +124,8 @@
     $("crumbs").innerHTML = crumbs;
     $("meta").innerHTML = meta;
     $("screenList").innerHTML = pub.screens.map((x) => `<li><a href="${hrefBase}/${enc(x.id)}"${x === s ? ' aria-current="page"' : ""}>${esc(x.title)}</a></li>`).join("");
-    $("extra").innerHTML = `${extra}<a href="${BASE + pub.entry}">Índice estático</a>`;
+    const where = { produccion: "la sección Producción", progreso: "el ticket en la sección En progreso", ds: "la sección Design System" }[tab];
+    $("extra").innerHTML = `${where ? penComment(`«${s.title}» en ${where}`) : ""}${extra}<a href="${BASE + pub.entry}">Índice estático</a>`;
     $("extra").querySelectorAll("select[data-nav]").forEach((sel) => sel.addEventListener("change", () => { location.hash = sel.value; }));
     document.title = `${s.title} · Yo También! Diseño`;
     const src = BASE + s.path;

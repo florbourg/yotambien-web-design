@@ -75,3 +75,8 @@ a { color: inherit; }
   .screen-list { display: flex; flex-wrap: wrap; gap: 4px; }
   #frame { min-height: 75vh; }
 }
+
+.pen-link { margin-left: auto; font-size: 14px; font-weight: 600; text-decoration: none; padding: 7px 14px; border-radius: 99px; background: var(--accent); color: #fff; white-space: nowrap; }
+.pen-link:hover { opacity: .85; }
+.pen-comment { font-weight: 600; }
+@media (max-width: 760px) { .pen-link { margin: 0 0 10px; } }
