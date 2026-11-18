@@ -28371,7 +28371,7 @@
                     {
                       "type": "frame",
                       "id": "aM9kv",
-                      "name": "Talleres",
+                      "name": "New talleres",
                       "clip": true,
                       "width": 1440,
                       "fill": "$white",
@@ -29408,7 +29408,7 @@
                                               "name": "SOMOS PROVEEDORES INCLUSIVOS",
                                               "context": "h3",
                                               "fill": "#ffffff",
-                                              "content": "SOMOS PROVEEDORES INCLUSIVOS",
+                                              "content": "TITULO NUEVO",
                                               "lineHeight": 1,
                                               "fontFamily": "Montserrat",
                                               "fontSize": 22.4,

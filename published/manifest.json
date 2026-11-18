@@ -189,6 +189,26 @@
       "updated": "2026-11-18",
       "iterations": [
         {
+          "id": "r2",
+          "date": "2026-11-18",
+          "notes": "Suma la pantalla «New talleres», una variante de las tarjetas, para comparar con la versión original.",
+          "source": "designs/yotambien-web.pen",
+          "library": "ds-v1.1.0",
+          "entry": "work/TBD-2/r2/index.html",
+          "screens": [
+            {
+              "id": "talleres",
+              "title": "Talleres",
+              "path": "work/TBD-2/r2/talleres.html"
+            },
+            {
+              "id": "new-talleres",
+              "title": "New talleres",
+              "path": "work/TBD-2/r2/new-talleres.html"
+            }
+          ]
+        },
+        {
           "id": "r1",
           "date": "2026-11-18",
           "notes": "Nueva página con el listado de talleres e inscripciones, armada con componentes del DS (incluye Badge de ds-v1.1.0). [Ejemplo de evolución]",
@@ -216,7 +236,7 @@
         {
           "id": "r1",
           "date": "2026-11-18",
-          "notes": "Copia de la pantalla Productora de Producción como punto de partida del ajuste; todavía sin cambios respecto de Producción.",
+          "notes": "Ajuste del título de la sección de proveedores: «SOMOS PROVEEDORES INCLUSIVOS» → «TITULO NUEVO».",
           "source": "designs/yotambien-web.pen",
           "library": "ds-v1.1.0",
           "entry": "work/TBD-3/r1/index.html",
