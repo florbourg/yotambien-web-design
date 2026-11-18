@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Applies the Estado / Tipo written in the .pen (each ticket's "Ticket Info") to published/manifest.json.
+// Applies the Estado / Tipo set in the .pen (theme of each ticket's "Pill · Estado" / "Pill · Tipo" instance) to published/manifest.json.
 //
 // The .pen is encrypted, so this script cannot read it. The ticket list is read in pen.dev
 // through the MCP (see README › "Estado de los tickets en el .pen") and passed here as JSON:
