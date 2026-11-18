@@ -44,7 +44,8 @@ published/
 portal/                          Portal estático (HTML/CSS/JS sin frameworks)
 scripts/
   publish.js                     Registra una publicación (ds | work | prod) después del export
-  set-status.js                  Cambia el estado de un ticket (y su clave o título)
+  sync-status.js                 Aplica al manifest el Estado/Tipo leídos del .pen
+  set-status.js                  Cambia a mano el estado de un ticket (y su clave o título)
   validate.js                    Valida manifest, archivos, imágenes e inmutabilidad
   build.js                       Arma _site/ para GitHub Pages
 ```
@@ -55,25 +56,51 @@ pen.dev no tiene páginas: todo vive en un único canvas. Cada sección es un fr
 
 ```text
 Producción › Frames › Home, Escuela, Productora, Formacion, Nosotros, Dona
-En progreso › Frames › «TBD-1 · Portfolio» › Pantallas › Portfolio
+En progreso › Frames › «TBD-3 · Productora» › Ticket Info (Pill · Estado, Pill · Tipo) + Pantallas › Productora
 Design System › Frames › DS · 01 Fundamentos, DS · 02 Componentes (los 29 componentes)
 ```
 
 - **Las pantallas de los tickets usan instancias de los componentes del Design System.** Si cambiás un componente, el cambio se propaga a todas las secciones.
 - **Para un ticket que modifica una pantalla existente**, copiá la pantalla desde Producción al contenedor del ticket y editá la copia. Producción no se toca hasta la promoción.
-- **Nombres:** el contenedor del ticket se llama exactamente `CLAVE-123 · Título` y sus pantallas van dentro de `Pantallas`. El nombre de cada frame define el nombre del archivo (`Formación` → `formacion.html`).
+- **Nombres:** el contenedor del ticket se llama exactamente `CLAVE-123 · Título` y sus pantallas van dentro de `Pantallas`. El nombre de cada frame define el nombre del archivo (`Formación` → `formacion.html`), así que dentro de un ticket cada pantalla necesita un nombre distinto.
+- **Ticket nuevo:** copiá la **Plantilla de ticket** que está en el encabezado de «En progreso» y pegala dentro de `En progreso › Frames`.
 
-### ¿Un solo `.pen` o varios?
+### Estado de los tickets en el `.pen`
 
-Por ahora hay **un solo archivo**. Los `.pen` están cifrados y git no puede combinar cambios de dos ramas sobre el mismo archivo. Con una sola diseñadora eso no es un problema: trabajá **un ticket a la vez por rama** y mergeá seguido.
+Cada contenedor tiene un bloque **Ticket Info** con dos instancias de componentes:
 
-Si el equipo crece, se puede separar (por ejemplo, un `.pen` por ticket). El repo y el portal ya están preparados, porque cada publicación registra su `source`. Lo que **no está resuelto** es compartir los componentes entre archivos. Resultado de la prueba del 2026-11-18:
+| Componente | Eje de tema | Valores |
+|---|---|---|
+| **Pill · Estado** | `Estado ticket` | En diseño · En revisión · Aprobado · En desarrollo · Descartado |
+| **Pill · Tipo** | `Tipo ticket` | Feature · Ajuste |
 
-- El formato `.pen` tiene un campo `imports` para usar componentes de otro archivo.
-- El MCP de pen.dev **no ofrece forma de declararlo** y una referencia a un componente de otro archivo falla ("non-existent node").
-- No se probó si la interfaz de pen.dev permite configurarlo.
+**Para cambiar el estado no se escribe nada:** seleccioná la pastilla del ticket y elegí otro valor en su **tema** (eje `Estado ticket` o `Tipo ticket`). El texto y el color cambian solos. Después guardá (⌘S). La leyenda en el encabezado de «En progreso» muestra los componentes y todos los valores posibles.
 
-Si no se puede, al separar archivos las pantallas quedarían con copias desconectadas de los componentes.
+**Cómo funciona por dentro** (pen.dev no tiene variantes de componentes):
+- Los ejes de tema `Estado ticket` y `Tipo ticket` controlan variables con tema: `ticket-estado-color` y `ticket-tipo-color` para el color, y una variable booleana por valor (`ticket-estado-es-en-revision`…) que decide qué texto se ve.
+- No hay que tocar los componentes maestros (en la leyenda), solo el tema de cada instancia.
+
+**Reglas:**
+- El `.pen` es la fuente de verdad del estado.
+- «En producción» no es un valor del eje: lo asigna la promoción (`publish.js prod --tickets`).
+- Antes de borrar un ticket que no sigue, poné su Estado en «Descartado» y publicá. Si no, queda colgado en el portal.
+- **Ticket nuevo:** copiá la **Plantilla de ticket** del encabezado; ya trae las dos pastillas.
+
+**Cómo se sincroniza.** El `.pen` está cifrado: ni los scripts ni GitHub pueden leerlo. En cada publicación, el tema de cada pastilla se lee en pen.dev a través del MCP y se aplica con `scripts/sync-status.js`:
+
+```js
+// En la herramienta MCP execute: devuelve la lista de tickets del .pen
+const section = name => Get((n, c) => { if (!c.parentCtx) { c.skipChildren(); return n.name === name ? n.id : undefined } return undefined })[0]
+const pill = (id, name, axis) => Get(id, n => n.type === "ref" && n.name === name ? (n.theme || {})[axis] ?? "(sin tema)" : undefined)[0]
+Print(JSON.stringify(Get(section("En progreso"), { depth: 2 }).children.find(c => c.name === "Frames").children
+  .map(t => { const [key, ...r] = t.name.split(" · "); return { key, title: r.join(" · "), estado: pill(t.id, "Pill · Estado", "Estado ticket"), tipo: pill(t.id, "Pill · Tipo", "Tipo ticket") } })))
+```
+
+```sh
+node scripts/sync-status.js tickets.json     # o: echo '<json>' | node scripts/sync-status.js
+```
+
+Con Claude Code alcanza con pedir _«publicá»_ o _«sincronizá los estados»_: lee el `.pen`, corre el script y te muestra qué cambió. El título del ticket también se toma del nombre del contenedor.
 
 ## Flujos de trabajo
 
@@ -100,11 +127,9 @@ En todos los casos: **rama → editar en pen.dev → exportar → `publish.js` �
    ```
    Al mergear, el ticket aparece en «En progreso» con estado **En diseño**.
 6. **Cada ronda de cambios** es una iteración nueva (`r2`, `r3`…), que publicás con `publish.js work WEB-123/r2 --notes "..."`. Las anteriores siguen visibles.
-7. **Estados.** Cambialos en la misma rama o en un PR chico:
+7. **Estados.** En el `.pen`, cambiá el tema de la pastilla **Estado** del ticket (En revisión → Aprobado → En desarrollo) y guardá. Se aplican al publicar (ver [Estado de los tickets en el `.pen`](#estado-de-los-tickets-en-el-pen)). Si hace falta, `set-status.js` sigue sirviendo para cambiarlos a mano en el manifest:
    ```sh
-   node scripts/set-status.js WEB-123 en-revision     # pedís revisión (comentarios en pen.dev)
-   node scripts/set-status.js WEB-123 aprobado        # diseño aprobado
-   node scripts/set-status.js WEB-123 en-desarrollo   # desarrollo lo tomó
+   node scripts/set-status.js WEB-123 en-revision
    ```
 
 ### B. Promover a Producción (cuando desarrollo ya desplegó)

@@ -28067,6 +28067,389 @@
               "fontFamily": "Montserrat",
               "fontSize": 56,
               "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "FR3rm",
+              "name": "Leyenda",
+              "layout": "vertical",
+              "gap": 24,
+              "padding": [
+                40,
+                0,
+                0,
+                0
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "H8hMJ",
+                  "name": "Leyenda Título",
+                  "fill": "#3B3B3B",
+                  "textGrowth": "fixed-width",
+                  "width": 2200,
+                  "content": "Cada ticket tiene dos componentes: «Pill · Estado» y «Pill · Tipo». Para cambiarlos, seleccioná la pastilla y elegí otro valor en su tema (Estado ticket / Tipo ticket). No hace falta escribir.",
+                  "lineHeight": 1.4,
+                  "fontFamily": "Montserrat",
+                  "fontSize": 40,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "fWWOD",
+                  "name": "Componentes de estado",
+                  "layout": "vertical",
+                  "gap": 28,
+                  "padding": [
+                    16,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "bJWvR",
+                      "name": "Componentes",
+                      "gap": 24,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "NEWPO",
+                          "name": "Etiqueta",
+                          "fill": "#6B6B6B",
+                          "content": "Componentes (no editar):",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 32,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "WYvPB",
+                          "name": "Pill · Estado",
+                          "theme": {
+                            "Estado ticket": "En diseño"
+                          },
+                          "reusable": true,
+                          "fill": "$ticket-estado-color",
+                          "cornerRadius": 999,
+                          "padding": [
+                            12,
+                            32
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "vL13e",
+                              "name": "Valor · En diseño",
+                              "enabled": "$ticket-estado-es-en-diseno",
+                              "fill": "#FFFFFF",
+                              "content": "En diseño",
+                              "fontFamily": "Montserrat",
+                              "fontSize": 48,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "eJgMg",
+                              "x": 0,
+                              "y": 0,
+                              "name": "Valor · En revisión",
+                              "enabled": "$ticket-estado-es-en-revision",
+                              "fill": "#FFFFFF",
+                              "content": "En revisión",
+                              "fontFamily": "Montserrat",
+                              "fontSize": 48,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "UelxS",
+                              "x": 0,
+                              "y": 0,
+                              "name": "Valor · Aprobado",
+                              "enabled": "$ticket-estado-es-aprobado",
+                              "fill": "#FFFFFF",
+                              "content": "Aprobado",
+                              "fontFamily": "Montserrat",
+                              "fontSize": 48,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "M4oZLQ",
+                              "x": 0,
+                              "y": 0,
+                              "name": "Valor · En desarrollo",
+                              "enabled": "$ticket-estado-es-en-desarrollo",
+                              "fill": "#FFFFFF",
+                              "content": "En desarrollo",
+                              "fontFamily": "Montserrat",
+                              "fontSize": 48,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "KzS9p",
+                              "x": 0,
+                              "y": 0,
+                              "name": "Valor · Descartado",
+                              "enabled": "$ticket-estado-es-descartado",
+                              "fill": "#FFFFFF",
+                              "content": "Descartado",
+                              "fontFamily": "Montserrat",
+                              "fontSize": 48,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "IQu1j",
+                          "name": "Pill · Tipo",
+                          "theme": {
+                            "Tipo ticket": "Feature"
+                          },
+                          "reusable": true,
+                          "fill": "$ticket-tipo-color",
+                          "cornerRadius": 999,
+                          "padding": [
+                            12,
+                            32
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "P3CPX",
+                              "name": "Valor · Feature",
+                              "enabled": "$ticket-tipo-es-feature",
+                              "fill": "#FFFFFF",
+                              "content": "Feature",
+                              "fontFamily": "Montserrat",
+                              "fontSize": 48,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "hkAiw",
+                              "x": 0,
+                              "y": 0,
+                              "name": "Valor · Ajuste",
+                              "enabled": "$ticket-tipo-es-ajuste",
+                              "fill": "#FFFFFF",
+                              "content": "Ajuste",
+                              "fontFamily": "Montserrat",
+                              "fontSize": 48,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "kGugv",
+                      "name": "Valores posibles",
+                      "gap": 24,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "mG10I",
+                          "name": "Etiqueta",
+                          "fill": "#6B6B6B",
+                          "content": "Valores posibles:",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 32,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "id": "t9w4c",
+                          "type": "ref",
+                          "ref": "WYvPB",
+                          "name": "Valor · En diseño",
+                          "theme": {
+                            "Estado ticket": "En diseño"
+                          }
+                        },
+                        {
+                          "id": "J2QYG",
+                          "type": "ref",
+                          "ref": "WYvPB",
+                          "name": "Valor · En revisión",
+                          "theme": {
+                            "Estado ticket": "En revisión"
+                          }
+                        },
+                        {
+                          "id": "LAjnn",
+                          "type": "ref",
+                          "ref": "WYvPB",
+                          "name": "Valor · Aprobado",
+                          "theme": {
+                            "Estado ticket": "Aprobado"
+                          }
+                        },
+                        {
+                          "id": "aLbN6",
+                          "type": "ref",
+                          "ref": "WYvPB",
+                          "name": "Valor · En desarrollo",
+                          "theme": {
+                            "Estado ticket": "En desarrollo"
+                          }
+                        },
+                        {
+                          "id": "X9WVQ",
+                          "type": "ref",
+                          "ref": "WYvPB",
+                          "name": "Valor · Descartado",
+                          "theme": {
+                            "Estado ticket": "Descartado"
+                          }
+                        },
+                        {
+                          "id": "NtTmm",
+                          "type": "ref",
+                          "ref": "IQu1j",
+                          "name": "Valor · Feature",
+                          "theme": {
+                            "Tipo ticket": "Feature"
+                          }
+                        },
+                        {
+                          "id": "fOb2j",
+                          "type": "ref",
+                          "ref": "IQu1j",
+                          "name": "Valor · Ajuste",
+                          "theme": {
+                            "Tipo ticket": "Ajuste"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "EzC58",
+                  "name": "Leyenda Nota",
+                  "fill": "#6B6B6B",
+                  "content": "«En producción» no se escribe acá: lo asigna la promoción a Producción.",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 32,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "dO8oF",
+              "name": "Plantilla de ticket",
+              "fill": "#FFFFFF",
+              "cornerRadius": 32,
+              "stroke": "#B3B3B3",
+              "strokeWidth": 2,
+              "layout": "vertical",
+              "gap": 40,
+              "padding": 64,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "n3PHhD",
+                  "name": "Plantilla Nota",
+                  "fill": "#6B6B6B",
+                  "content": "Plantilla · copiala a «Frames» para empezar un ticket nuevo",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 28,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "j5KN3q",
+                  "name": "Ticket Label",
+                  "fill": "#1A1A1A",
+                  "content": "CLAVE-123 · Título",
+                  "fontFamily": "Montserrat",
+                  "fontSize": 64,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "VCLBv",
+                  "name": "Ticket Info",
+                  "gap": 43,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "wJeGg",
+                      "name": "Estado",
+                      "gap": 14,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "jBVrI",
+                          "name": "Campo",
+                          "fill": "#6B6B6B",
+                          "content": "Estado:",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 36,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "id": "pgsrK",
+                          "type": "ref",
+                          "ref": "WYvPB",
+                          "name": "Pill · Estado",
+                          "theme": {
+                            "Estado ticket": "En diseño"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ISxYl",
+                      "name": "Tipo",
+                      "gap": 14,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "VePiN",
+                          "name": "Campo",
+                          "fill": "#6B6B6B",
+                          "content": "Tipo:",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 36,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "id": "E4dUdl",
+                          "type": "ref",
+                          "ref": "IQu1j",
+                          "name": "Pill · Tipo",
+                          "theme": {
+                            "Tipo ticket": "Feature"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "c4Wyu",
+                  "name": "Pantallas",
+                  "width": 600,
+                  "height": 200,
+                  "cornerRadius": 16,
+                  "stroke": "#D4D4D5",
+                  "strokeWidth": 2,
+                  "gap": 160
+                }
+              ]
             }
           ]
         },
@@ -28095,6 +28478,71 @@
                   "fontFamily": "Montserrat",
                   "fontSize": 96,
                   "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "p8imdh",
+                  "name": "Ticket Info",
+                  "gap": 58,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "asSGk",
+                      "name": "Estado",
+                      "gap": 19,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "DvrRX",
+                          "name": "Campo",
+                          "fill": "#6B6B6B",
+                          "content": "Estado:",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 48,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "id": "eIeJY",
+                          "type": "ref",
+                          "ref": "WYvPB",
+                          "name": "Pill · Estado",
+                          "theme": {
+                            "Estado ticket": "En diseño"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "vr8hN",
+                      "name": "Tipo",
+                      "gap": 19,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "o5nCmf",
+                          "name": "Campo",
+                          "fill": "#6B6B6B",
+                          "content": "Tipo:",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 48,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "id": "VN2a8",
+                          "type": "ref",
+                          "ref": "IQu1j",
+                          "name": "Pill · Tipo",
+                          "theme": {
+                            "Tipo ticket": "Feature"
+                          }
+                        }
+                      ]
+                    }
+                  ]
                 },
                 {
                   "type": "frame",
@@ -28506,6 +28954,71 @@
                   "fontFamily": "Montserrat",
                   "fontSize": 96,
                   "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "yxQsB",
+                  "name": "Ticket Info",
+                  "gap": 58,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "CjRjs",
+                      "name": "Estado",
+                      "gap": 19,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "iRRxj",
+                          "name": "Campo",
+                          "fill": "#6B6B6B",
+                          "content": "Estado:",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 48,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "id": "KlbVr",
+                          "type": "ref",
+                          "ref": "WYvPB",
+                          "name": "Pill · Estado",
+                          "theme": {
+                            "Estado ticket": "En revisión"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "MN1KZ",
+                      "name": "Tipo",
+                      "gap": 19,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "r22dUr",
+                          "name": "Campo",
+                          "fill": "#6B6B6B",
+                          "content": "Tipo:",
+                          "fontFamily": "Montserrat",
+                          "fontSize": 48,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "id": "a05Vp",
+                          "type": "ref",
+                          "ref": "IQu1j",
+                          "name": "Pill · Tipo",
+                          "theme": {
+                            "Tipo ticket": "Ajuste"
+                          }
+                        }
+                      ]
+                    }
+                  ]
                 },
                 {
                   "type": "frame",
@@ -31170,6 +31683,19 @@
       ]
     }
   ],
+  "themes": {
+    "Estado ticket": [
+      "En diseño",
+      "En revisión",
+      "Aprobado",
+      "En desarrollo",
+      "Descartado"
+    ],
+    "Tipo ticket": [
+      "Feature",
+      "Ajuste"
+    ]
+  },
   "variables": {
     "ink": {
       "type": "color",
@@ -31310,6 +31836,267 @@
     "container": {
       "type": "number",
       "value": 1140
+    },
+    "ticket-estado-color": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#6B5BD6",
+          "theme": {
+            "Estado ticket": "En diseño"
+          }
+        },
+        {
+          "value": "#C27C0E",
+          "theme": {
+            "Estado ticket": "En revisión"
+          }
+        },
+        {
+          "value": "#2F7D4F",
+          "theme": {
+            "Estado ticket": "Aprobado"
+          }
+        },
+        {
+          "value": "#1F6FB2",
+          "theme": {
+            "Estado ticket": "En desarrollo"
+          }
+        },
+        {
+          "value": "#9A9A9A",
+          "theme": {
+            "Estado ticket": "Descartado"
+          }
+        }
+      ]
+    },
+    "ticket-tipo-color": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#3B3B3B",
+          "theme": {
+            "Tipo ticket": "Feature"
+          }
+        },
+        {
+          "value": "#8A5A00",
+          "theme": {
+            "Tipo ticket": "Ajuste"
+          }
+        }
+      ]
+    },
+    "ticket-estado-es-en-diseno": {
+      "type": "boolean",
+      "value": [
+        {
+          "value": true,
+          "theme": {
+            "Estado ticket": "En diseño"
+          }
+        },
+        {
+          "value": false,
+          "theme": {
+            "Estado ticket": "En revisión"
+          }
+        },
+        {
+          "value": false,
+          "theme": {
+            "Estado ticket": "Aprobado"
+          }
+        },
+        {
+          "value": false,
+          "theme": {
+            "Estado ticket": "En desarrollo"
+          }
+        },
+        {
+          "value": false,
+          "theme": {
+            "Estado ticket": "Descartado"
+          }
+        }
+      ]
+    },
+    "ticket-estado-es-en-revision": {
+      "type": "boolean",
+      "value": [
+        {
+          "value": false,
+          "theme": {
+            "Estado ticket": "En diseño"
+          }
+        },
+        {
+          "value": true,
+          "theme": {
+            "Estado ticket": "En revisión"
+          }
+        },
+        {
+          "value": false,
+          "theme": {
+            "Estado ticket": "Aprobado"
+          }
+        },
+        {
+          "value": false,
+          "theme": {
+            "Estado ticket": "En desarrollo"
+          }
+        },
+        {
+          "value": false,
+          "theme": {
+            "Estado ticket": "Descartado"
+          }
+        }
+      ]
+    },
+    "ticket-estado-es-aprobado": {
+      "type": "boolean",
+      "value": [
+        {
+          "value": false,
+          "theme": {
+            "Estado ticket": "En diseño"
+          }
+        },
+        {
+          "value": false,
+          "theme": {
+            "Estado ticket": "En revisión"
+          }
+        },
+        {
+          "value": true,
+          "theme": {
+            "Estado ticket": "Aprobado"
+          }
+        },
+        {
+          "value": false,
+          "theme": {
+            "Estado ticket": "En desarrollo"
+          }
+        },
+        {
+          "value": false,
+          "theme": {
+            "Estado ticket": "Descartado"
+          }
+        }
+      ]
+    },
+    "ticket-estado-es-en-desarrollo": {
+      "type": "boolean",
+      "value": [
+        {
+          "value": false,
+          "theme": {
+            "Estado ticket": "En diseño"
+          }
+        },
+        {
+          "value": false,
+          "theme": {
+            "Estado ticket": "En revisión"
+          }
+        },
+        {
+          "value": false,
+          "theme": {
+            "Estado ticket": "Aprobado"
+          }
+        },
+        {
+          "value": true,
+          "theme": {
+            "Estado ticket": "En desarrollo"
+          }
+        },
+        {
+          "value": false,
+          "theme": {
+            "Estado ticket": "Descartado"
+          }
+        }
+      ]
+    },
+    "ticket-estado-es-descartado": {
+      "type": "boolean",
+      "value": [
+        {
+          "value": false,
+          "theme": {
+            "Estado ticket": "En diseño"
+          }
+        },
+        {
+          "value": false,
+          "theme": {
+            "Estado ticket": "En revisión"
+          }
+        },
+        {
+          "value": false,
+          "theme": {
+            "Estado ticket": "Aprobado"
+          }
+        },
+        {
+          "value": false,
+          "theme": {
+            "Estado ticket": "En desarrollo"
+          }
+        },
+        {
+          "value": true,
+          "theme": {
+            "Estado ticket": "Descartado"
+          }
+        }
+      ]
+    },
+    "ticket-tipo-es-feature": {
+      "type": "boolean",
+      "value": [
+        {
+          "value": true,
+          "theme": {
+            "Tipo ticket": "Feature"
+          }
+        },
+        {
+          "value": false,
+          "theme": {
+            "Tipo ticket": "Ajuste"
+          }
+        }
+      ]
+    },
+    "ticket-tipo-es-ajuste": {
+      "type": "boolean",
+      "value": [
+        {
+          "value": false,
+          "theme": {
+            "Tipo ticket": "Feature"
+          }
+        },
+        {
+          "value": true,
+          "theme": {
+            "Tipo ticket": "Ajuste"
+          }
+        }
+      ]
     }
   },
   "fileToken": "3f1e0671-a3d2-4e5f-880b-72994c814216",
