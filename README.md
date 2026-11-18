@@ -171,6 +171,8 @@ node scripts/set-status.js TBD-1 en-diseno --key WEB-45
 
 Renombrá también el contenedor en el `.pen`. Los archivos ya publicados conservan su carpeta (`work/TBD-1/…`); solo cambia cómo se muestra y enlaza el ticket.
 
+**Comentarios en pen.dev:** el portal muestra «Comentar en pen.dev» en el encabezado y en cada pantalla. Lleva al documento compartido, definido en `"penUrl"` de `published/manifest.json`. Si cambia el link para compartir, actualizá ese valor.
+
 **Enlace a Jira:** completá `"jiraBaseUrl": "https://tuorg.atlassian.net"` en `published/manifest.json` y el portal muestra «Ver en Jira» en cada ticket.
 
 ## Exportar

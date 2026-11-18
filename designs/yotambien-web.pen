@@ -28474,7 +28474,7 @@
                   "id": "X5RTVS",
                   "name": "Ticket Label",
                   "fill": "#1A1A1A",
-                  "content": "TBD-2 · Talleres abiertos",
+                  "content": "TBD-2 · Talleres abiertos -",
                   "fontFamily": "Montserrat",
                   "fontSize": 96,
                   "fontWeight": "700"
@@ -28510,6 +28510,15 @@
                           "name": "Pill · Estado",
                           "theme": {
                             "Estado ticket": "En diseño"
+                          },
+                          "fill": "$ticket-estado-color",
+                          "descendants": {
+                            "vL13e": {
+                              "enabled": false
+                            },
+                            "eJgMg": {
+                              "enabled": true
+                            }
                           }
                         }
                       ]
